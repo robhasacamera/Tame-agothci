@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		E181E2FB1F7AC1B90082B67A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E181E2FA1F7AC1B90082B67A /* AppDelegate.swift */; };
-		E181E2FD1F7AC1B90082B67A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E181E2FC1F7AC1B90082B67A /* ViewController.swift */; };
+		E181E2FD1F7AC1B90082B67A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E181E2FC1F7AC1B90082B67A /* MainViewController.swift */; };
 		E181E3001F7AC1B90082B67A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E181E2FE1F7AC1B90082B67A /* Main.storyboard */; };
 		E181E3031F7AC1B90082B67A /* Tame_agothci.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E181E3011F7AC1B90082B67A /* Tame_agothci.xcdatamodeld */; };
 		E181E3051F7AC1B90082B67A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E181E3041F7AC1B90082B67A /* Assets.xcassets */; };
 		E181E3081F7AC1B90082B67A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E181E3061F7AC1B90082B67A /* LaunchScreen.storyboard */; };
+		E181E3101F7ACAB00082B67A /* Lion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E181E30F1F7ACAB00082B67A /* Lion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E181E2F71F7AC1B90082B67A /* Tame-agothci.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tame-agothci.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E181E2FA1F7AC1B90082B67A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E181E2FC1F7AC1B90082B67A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E181E2FC1F7AC1B90082B67A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E181E2FF1F7AC1B90082B67A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E181E3021F7AC1B90082B67A /* Tame_agothci.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tame_agothci.xcdatamodel; sourceTree = "<group>"; };
 		E181E3041F7AC1B90082B67A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E181E3071F7AC1B90082B67A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E181E3091F7AC1B90082B67A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E181E30F1F7ACAB00082B67A /* Lion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				E181E2FA1F7AC1B90082B67A /* AppDelegate.swift */,
-				E181E2FC1F7AC1B90082B67A /* ViewController.swift */,
+				E181E2FC1F7AC1B90082B67A /* MainViewController.swift */,
 				E181E2FE1F7AC1B90082B67A /* Main.storyboard */,
 				E181E3041F7AC1B90082B67A /* Assets.xcassets */,
 				E181E3061F7AC1B90082B67A /* LaunchScreen.storyboard */,
 				E181E3091F7AC1B90082B67A /* Info.plist */,
 				E181E3011F7AC1B90082B67A /* Tame_agothci.xcdatamodeld */,
+				E181E30F1F7ACAB00082B67A /* Lion.swift */,
 			);
 			path = "Tame-agothci";
 			sourceTree = "<group>";
@@ -140,8 +143,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E181E3031F7AC1B90082B67A /* Tame_agothci.xcdatamodeld in Sources */,
-				E181E2FD1F7AC1B90082B67A /* ViewController.swift in Sources */,
+				E181E2FD1F7AC1B90082B67A /* MainViewController.swift in Sources */,
 				E181E2FB1F7AC1B90082B67A /* AppDelegate.swift in Sources */,
+				E181E3101F7ACAB00082B67A /* Lion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

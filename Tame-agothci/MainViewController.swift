@@ -10,6 +10,8 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    var lastUpdateTime = Date()
+    
     var timer: Timer?
     
     override func viewDidLoad() {
@@ -31,7 +33,11 @@ class MainViewController: UIViewController {
     }
     
     @objc func update() {
-        print("Tick")
+        let timeSinceLastUpdate = -1 * lastUpdateTime.timeIntervalSinceNow
+        
+        print("Last update was \(timeSinceLastUpdate) seconds ago.")
+        
+        lastUpdateTime = Date()
     }
 }
 

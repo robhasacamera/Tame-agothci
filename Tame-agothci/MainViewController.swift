@@ -9,10 +9,14 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
+    var timer: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,5 +30,8 @@ class MainViewController: UIViewController {
         print("Feed was pressed")
     }
     
+    @objc func update() {
+        print("Tick")
+    }
 }
 

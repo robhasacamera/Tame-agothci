@@ -32,6 +32,29 @@ class MainViewController: UIViewController {
         print("Feed was pressed")
     }
     
+    @IBOutlet weak var petButton: UIButton!
+    
+    @IBAction func petButtonPressed(_ sender: Any) {
+        print("Pet was pressed")
+    }
+    
+    @IBOutlet weak var combButton: UIButton!
+    
+    @IBAction func combButtonPressed(_ sender: Any) {
+        print("Comb was pressed")
+    }
+    
+    @IBOutlet weak var playButton: UIButton!
+    
+    @IBAction func playButtonPressed(_ sender: Any) {
+        print("Play was pressed")
+    }
+    
+    @IBOutlet weak var trainButton: UIButton!
+    
+    @IBAction func trainButtonPressed(_ sender: Any) {
+        print("Train was pressed")
+    }
     @objc func update() {
         let timeSinceLastUpdate = -1 * lastUpdateTime.timeIntervalSinceNow
         

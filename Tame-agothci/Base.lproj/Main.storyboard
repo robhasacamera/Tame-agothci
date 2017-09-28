@@ -80,16 +80,25 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="34.333333333333371"/>
                                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                         <state key="normal" title="Pet"/>
+                                                        <connections>
+                                                            <action selector="petButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YJe-vl-XiC"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcy-B8-aTM">
                                                         <rect key="frame" x="125" y="0.0" width="125" height="34.333333333333371"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <state key="normal" title="Comb"/>
+                                                        <connections>
+                                                            <action selector="combButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JGe-gv-5MX"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDS-la-aFO">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDS-la-aFO" userLabel="Play Button">
                                                         <rect key="frame" x="250" y="0.0" width="125" height="34.333333333333371"/>
                                                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="Play"/>
+                                                        <connections>
+                                                            <action selector="playButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rea-PB-idB"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -97,6 +106,9 @@
                                                 <rect key="frame" x="0.0" y="69" width="375" height="34.666666666666629"/>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Train"/>
+                                                <connections>
+                                                    <action selector="trainButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sdX-7W-09V"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -114,7 +126,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="combButton" destination="ZDS-la-aFO" id="wrm-Wm-YY9"/>
                         <outlet property="feedButton" destination="AOa-ej-55v" id="UjK-5V-Qcf"/>
+                        <outlet property="petButton" destination="7yL-Ea-kaT" id="9eP-oB-TDd"/>
+                        <outlet property="playButton" destination="ZDS-la-aFO" id="y8P-Wl-WD1"/>
+                        <outlet property="trainButton" destination="enF-IK-oCN" id="qaN-KW-qr6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

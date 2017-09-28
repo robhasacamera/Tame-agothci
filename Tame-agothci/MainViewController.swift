@@ -14,6 +14,13 @@ class MainViewController: UIViewController {
     
     var timer: Timer?
     
+    var lastTimeFed: Date?
+    
+    let feedInterval = 10.0
+    
+    var lion = Lion(hunger: 70, happiness: 10)
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -30,6 +37,9 @@ class MainViewController: UIViewController {
     
     @IBAction func feedButtonPressed(_ sender: Any) {
         print("Feed was pressed")
+        feedButton.isEnabled = false
+        lion.hunger = lion.hunger - 10
+        lastTimeFed = Date()
     }
     
     @IBOutlet weak var petButton: UIButton!
@@ -56,11 +66,21 @@ class MainViewController: UIViewController {
         print("Train was pressed")
     }
     @objc func update() {
+        updateFeedButton()
         let timeSinceLastUpdate = -1 * lastUpdateTime.timeIntervalSinceNow
         
         print("Last update was \(timeSinceLastUpdate) seconds ago.")
         
         lastUpdateTime = Date()
+    }
+    
+    func updateFeedButton() {
+        if let lastTimeFed = lastTimeFed {
+            let timeSinceLastFed = -1 * lastTimeFed.timeIntervalSinceNow
+            if timeSinceLastFed >= feedInterval {
+                feedButton.isEnabled = true
+            }
+        }
     }
 }
 

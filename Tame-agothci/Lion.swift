@@ -9,6 +9,6 @@
 import Foundation
 
 public struct Lion {
-    var hunger = 0
-    var happiness = 0
+    var hunger: Int
+    var happiness: Int
 }

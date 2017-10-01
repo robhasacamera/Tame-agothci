@@ -82,6 +82,9 @@ class MainViewController: UIViewController {
     }
     @objc func update() {
         updateFeedButton()
+        updatePetButton()
+        updateCombButton()
+        updatePlayButton()
         let timeSinceLastUpdate = -1 * lastUpdateTime.timeIntervalSinceNow
         
         print("Last update was \(timeSinceLastUpdate) seconds ago.")

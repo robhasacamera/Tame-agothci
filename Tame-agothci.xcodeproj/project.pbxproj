@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		37BFC3571F8129F30075F688 /* MainViewController-bu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BFC3561F8129F30075F688 /* MainViewController-bu.swift */; };
 		E181E2FB1F7AC1B90082B67A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E181E2FA1F7AC1B90082B67A /* AppDelegate.swift */; };
 		E181E2FD1F7AC1B90082B67A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E181E2FC1F7AC1B90082B67A /* MainViewController.swift */; };
 		E181E3001F7AC1B90082B67A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E181E2FE1F7AC1B90082B67A /* Main.storyboard */; };
@@ -18,7 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		37BFC3561F8129F30075F688 /* MainViewController-bu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewController-bu.swift"; sourceTree = "<group>"; };
 		E181E2F71F7AC1B90082B67A /* Tame-agothci.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tame-agothci.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E181E2FA1F7AC1B90082B67A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E181E2FC1F7AC1B90082B67A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 			children = (
 				E181E2FA1F7AC1B90082B67A /* AppDelegate.swift */,
 				E181E2FC1F7AC1B90082B67A /* MainViewController.swift */,
-				37BFC3561F8129F30075F688 /* MainViewController-bu.swift */,
 				E181E2FE1F7AC1B90082B67A /* Main.storyboard */,
 				E181E3041F7AC1B90082B67A /* Assets.xcassets */,
 				E181E3061F7AC1B90082B67A /* LaunchScreen.storyboard */,
@@ -149,7 +146,6 @@
 				E181E2FD1F7AC1B90082B67A /* MainViewController.swift in Sources */,
 				E181E2FB1F7AC1B90082B67A /* AppDelegate.swift in Sources */,
 				E181E3101F7ACAB00082B67A /* Lion.swift in Sources */,
-				37BFC3571F8129F30075F688 /* MainViewController-bu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -56,6 +56,8 @@ class MainViewController: UIViewController {
         lion.happiness += 5
         lastTimePet = Date()
     }
+    @IBOutlet weak var hungerProgressView: UIProgressView!
+    @IBOutlet weak var happinessProgressView: UIProgressView!
     
     @IBOutlet weak var combButton: UIButton!
     
@@ -85,11 +87,19 @@ class MainViewController: UIViewController {
         updatePetButton()
         updateCombButton()
         updatePlayButton()
+        updateProgressViews()
         let timeSinceLastUpdate = -1 * lastUpdateTime.timeIntervalSinceNow
         
         print("Last update was \(timeSinceLastUpdate) seconds ago.")
         
         lastUpdateTime = Date()
+    }
+    
+    
+    func updateProgressViews() {
+        happinessProgressView.progress = Float(lion.happiness) / Float(100)
+        hungerProgressView.progress = Float(lion.hunger) / Float(100)
+        
     }
     
     func updateFeedButton() {

@@ -29,7 +29,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9pq-59-H4L">
                                                         <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="25.666666666666671"/>
                                                         <subviews>
-                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bur-bb-1xJ">
+                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bur-bb-1xJ" userLabel="Happiness Progress View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="2"/>
                                                             </progressView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Happiness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0IF-PS-5uu">
@@ -43,7 +43,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LsG-vm-KUy">
                                                         <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="25.666666666666671"/>
                                                         <subviews>
-                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="K1J-Hn-Egg">
+                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="K1J-Hn-Egg" userLabel="Hunger Progress View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="187.33333333333334" height="2"/>
                                                             </progressView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Hunger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqX-F9-mVi">
@@ -126,8 +126,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="combButton" destination="ZDS-la-aFO" id="wrm-Wm-YY9"/>
+                        <outlet property="combButton" destination="bcy-B8-aTM" id="6va-ad-c3w"/>
                         <outlet property="feedButton" destination="AOa-ej-55v" id="UjK-5V-Qcf"/>
+                        <outlet property="happinessProgressView" destination="bur-bb-1xJ" id="PyV-NA-EJ6"/>
+                        <outlet property="hungerProgressView" destination="K1J-Hn-Egg" id="pi8-pP-AUc"/>
                         <outlet property="petButton" destination="7yL-Ea-kaT" id="9eP-oB-TDd"/>
                         <outlet property="playButton" destination="ZDS-la-aFO" id="y8P-Wl-WD1"/>
                         <outlet property="trainButton" destination="enF-IK-oCN" id="qaN-KW-qr6"/>

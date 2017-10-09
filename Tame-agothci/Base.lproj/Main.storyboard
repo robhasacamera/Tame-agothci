@@ -129,6 +129,7 @@
                     <connections>
                         <outlet property="combButton" destination="bcy-B8-aTM" id="6va-ad-c3w"/>
                         <outlet property="feedButton" destination="AOa-ej-55v" id="UjK-5V-Qcf"/>
+                        <outlet property="happinessLabel" destination="0IF-PS-5uu" id="rx8-Nk-HDD"/>
                         <outlet property="happinessProgressView" destination="bur-bb-1xJ" id="PyV-NA-EJ6"/>
                         <outlet property="hungerLabel" destination="TqX-F9-mVi" id="J97-dL-XMC"/>
                         <outlet property="hungerProgressView" destination="K1J-Hn-Egg" id="pi8-pP-AUc"/>

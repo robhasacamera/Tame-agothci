@@ -19,22 +19,27 @@ class MainViewController: UIViewController {
     var lastTimeCombed: Date?
     var lastTimePlayed: Date?
     var lastTimeHungry: Date?
-    var appLaunchTime: Date?
+    var appLaunchTime:  Date?
     
     let feedInterval = 10.0
     let petInterval  = 10.0
     let combInterval = 20.0
     let playInterval = 45.0
+    let initialHungerInterval = 60.0
+    let reoccuringHungerInterval = 15.0
     
     var lion = Lion(hunger: 30, happiness: 10)
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         appLaunchTime = Date()
+        
+        updateProgressViews()
+        
+        print("\(appLaunchTime!): App Launched")
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,11 +50,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var feedButton: UIButton!
     
     @IBAction func feedButtonPressed(_ sender: Any) {
-        print("Feed was pressed")
         feedButton.isEnabled = false
         lion.hunger -= 10
         lastTimeFed = Date()
         lastTimeHungry = nil
+        print("\(Date()): Feed was pressed")
     }
     
     @IBOutlet weak var petButton: UIButton!
@@ -60,6 +65,7 @@ class MainViewController: UIViewController {
         lion.happiness += 5
         lastTimePet = Date()
     }
+    
     @IBOutlet weak var hungerProgressView: UIProgressView!
     @IBOutlet weak var happinessProgressView: UIProgressView!
     
@@ -82,6 +88,9 @@ class MainViewController: UIViewController {
     }
     
     @IBOutlet weak var hungerLabel: UILabel!
+    @IBOutlet weak var happinessLabel: UILabel!
+    
+    
     @IBOutlet weak var trainButton: UIButton!
     
     @IBAction func trainButtonPressed(_ sender: Any) {
@@ -94,9 +103,6 @@ class MainViewController: UIViewController {
         updateCombButton()
         updatePlayButton()
         updateProgressViews()
-        let timeSinceLastUpdate = -1 * lastUpdateTime.timeIntervalSinceNow
-        
-        print("Last update was \(timeSinceLastUpdate) seconds ago.")
         
         lastUpdateTime = Date()
     }
@@ -104,33 +110,39 @@ class MainViewController: UIViewController {
     func updateHunger() {
         if let lastTimeHungry = lastTimeHungry {
             let timeSinceLastTimeHungry = -1 * lastTimeHungry.timeIntervalSinceNow
-            if timeSinceLastTimeHungry >= 15.0 {
+            if timeSinceLastTimeHungry >= reoccuringHungerInterval {
                 lion.hunger += 5
                 self.lastTimeHungry = Date()
+                print("\(self.lastTimeHungry!): Updated hunger to \(lion.hunger)")
             }
         } else {
             if let lastTimeFed = lastTimeFed {
                 let timeSinceLastFed = -1 * lastTimeFed.timeIntervalSinceNow
-                if timeSinceLastFed >= 60.0 {
+                if timeSinceLastFed >= initialHungerInterval {
                     lion.hunger += 5
                     lastTimeHungry = Date()
+                    print("\(lastTimeHungry!): Updated hunger to \(lion.hunger)")
                 }
             } else if let appLaunchTime = appLaunchTime {
-                    let timeSinceAppLaunch = -1 * appLaunchTime.timeIntervalSinceNow
-                    if timeSinceAppLaunch >= 60.0 {
-                        lion.hunger += 5
-                        lastTimeHungry = Date()
-                    }
+                let timeSinceAppLaunch = -1 * appLaunchTime.timeIntervalSinceNow
+                if timeSinceAppLaunch >= initialHungerInterval {
+                    lion.hunger += 5
+                    lastTimeHungry = Date()
+                    print("\(lastTimeHungry!): Updated hunger to \(lion.hunger)")
+                }
             }
         }
         
+        if lion.hunger > 100 {
+            lion.hunger = 100
+        }
     }
     
     func updateProgressViews() {
         happinessProgressView.progress = Float(lion.happiness) / Float(100)
+        happinessLabel.text = "Happiness: \(lion.happiness)"
         hungerProgressView.progress = Float(lion.hunger) / Float(100)
         hungerLabel.text = "Hunger: \(lion.hunger)"
-        
     }
     
     func updateFeedButton() {

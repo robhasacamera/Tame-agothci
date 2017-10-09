@@ -130,6 +130,7 @@
                         <outlet property="combButton" destination="bcy-B8-aTM" id="6va-ad-c3w"/>
                         <outlet property="feedButton" destination="AOa-ej-55v" id="UjK-5V-Qcf"/>
                         <outlet property="happinessProgressView" destination="bur-bb-1xJ" id="PyV-NA-EJ6"/>
+                        <outlet property="hungerLabel" destination="TqX-F9-mVi" id="J97-dL-XMC"/>
                         <outlet property="hungerProgressView" destination="K1J-Hn-Egg" id="pi8-pP-AUc"/>
                         <outlet property="petButton" destination="7yL-Ea-kaT" id="9eP-oB-TDd"/>
                         <outlet property="playButton" destination="ZDS-la-aFO" id="y8P-Wl-WD1"/>

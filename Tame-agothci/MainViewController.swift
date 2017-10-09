@@ -18,6 +18,8 @@ class MainViewController: UIViewController {
     var lastTimePet:    Date?
     var lastTimeCombed: Date?
     var lastTimePlayed: Date?
+    var lastTimeHungry: Date?
+    var appLaunchTime: Date?
     
     let feedInterval = 10.0
     let petInterval  = 10.0
@@ -32,6 +34,7 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+        appLaunchTime = Date()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +49,7 @@ class MainViewController: UIViewController {
         feedButton.isEnabled = false
         lion.hunger -= 10
         lastTimeFed = Date()
+        lastTimeHungry = nil
     }
     
     @IBOutlet weak var petButton: UIButton!
@@ -77,12 +81,14 @@ class MainViewController: UIViewController {
         lastTimePlayed = Date()
     }
     
+    @IBOutlet weak var hungerLabel: UILabel!
     @IBOutlet weak var trainButton: UIButton!
     
     @IBAction func trainButtonPressed(_ sender: Any) {
         print("Train was pressed")
     }
     @objc func update() {
+        updateHunger()
         updateFeedButton()
         updatePetButton()
         updateCombButton()
@@ -95,10 +101,35 @@ class MainViewController: UIViewController {
         lastUpdateTime = Date()
     }
     
+    func updateHunger() {
+        if let lastTimeHungry = lastTimeHungry {
+            let timeSinceLastTimeHungry = -1 * lastTimeHungry.timeIntervalSinceNow
+            if timeSinceLastTimeHungry >= 15.0 {
+                lion.hunger += 5
+                self.lastTimeHungry = Date()
+            }
+        } else {
+            if let lastTimeFed = lastTimeFed {
+                let timeSinceLastFed = -1 * lastTimeFed.timeIntervalSinceNow
+                if timeSinceLastFed >= 60.0 {
+                    lion.hunger += 5
+                    lastTimeHungry = Date()
+                }
+            } else if let appLaunchTime = appLaunchTime {
+                    let timeSinceAppLaunch = -1 * appLaunchTime.timeIntervalSinceNow
+                    if timeSinceAppLaunch >= 60.0 {
+                        lion.hunger += 5
+                        lastTimeHungry = Date()
+                    }
+            }
+        }
+        
+    }
     
     func updateProgressViews() {
         happinessProgressView.progress = Float(lion.happiness) / Float(100)
         hungerProgressView.progress = Float(lion.hunger) / Float(100)
+        hungerLabel.text = "Hunger: \(lion.hunger)"
         
     }
     

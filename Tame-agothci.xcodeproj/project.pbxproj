@@ -14,6 +14,7 @@
 		E181E3051F7AC1B90082B67A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E181E3041F7AC1B90082B67A /* Assets.xcassets */; };
 		E181E3081F7AC1B90082B67A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E181E3061F7AC1B90082B67A /* LaunchScreen.storyboard */; };
 		E181E3101F7ACAB00082B67A /* Lion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E181E30F1F7ACAB00082B67A /* Lion.swift */; };
+		E181E3121F8697440082B67A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E181E3111F8697440082B67A /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E181E3071F7AC1B90082B67A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E181E3091F7AC1B90082B67A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E181E30F1F7ACAB00082B67A /* Lion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lion.swift; sourceTree = "<group>"; };
+		E181E3111F8697440082B67A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				E181E3091F7AC1B90082B67A /* Info.plist */,
 				E181E3011F7AC1B90082B67A /* Tame_agothci.xcdatamodeld */,
 				E181E30F1F7ACAB00082B67A /* Lion.swift */,
+				E181E3111F8697440082B67A /* GameViewController.swift */,
 			);
 			path = "Tame-agothci";
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E181E3121F8697440082B67A /* GameViewController.swift in Sources */,
 				E181E3031F7AC1B90082B67A /* Tame_agothci.xcdatamodeld in Sources */,
 				E181E2FD1F7AC1B90082B67A /* MainViewController.swift in Sources */,
 				E181E2FB1F7AC1B90082B67A /* AppDelegate.swift in Sources */,

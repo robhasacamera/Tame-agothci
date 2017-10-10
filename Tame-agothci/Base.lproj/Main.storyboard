@@ -27,13 +27,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="613" height="15.666666666666664"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9pq-59-H4L">
-                                                        <rect key="frame" x="0.0" y="0.0" width="306.33333333333331" height="15.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="306.66666666666669" height="15.666666666666664"/>
                                                         <subviews>
                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bur-bb-1xJ" userLabel="Happiness Progress View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="306.33333333333331" height="2"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="306.66666666666669" height="2"/>
                                                             </progressView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Happiness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0IF-PS-5uu">
-                                                                <rect key="frame" x="0.0" y="2" width="306.33333333333331" height="13.666666666666664"/>
+                                                                <rect key="frame" x="0.0" y="2" width="306.66666666666669" height="13.666666666666664"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -41,13 +41,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LsG-vm-KUy">
-                                                        <rect key="frame" x="306.33333333333326" y="0.0" width="306.66666666666674" height="15.666666666666664"/>
+                                                        <rect key="frame" x="306.66666666666674" y="0.0" width="306.33333333333326" height="15.666666666666664"/>
                                                         <subviews>
                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="K1J-Hn-Egg" userLabel="Hunger Progress View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="306.66666666666669" height="2"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="306.33333333333331" height="2"/>
                                                             </progressView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Hunger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqX-F9-mVi">
-                                                                <rect key="frame" x="0.0" y="2" width="306.66666666666669" height="13.666666666666664"/>
+                                                                <rect key="frame" x="0.0" y="2" width="306.33333333333331" height="13.666666666666664"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -146,7 +146,7 @@
         <!--Pick your Hoop-->
         <scene sceneID="Efe-hp-QRI">
             <objects>
-                <viewController storyboardIdentifier="GameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2B4-cR-SmG" customClass="GameViewController" customModule="Tame_agothci" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2B4-cR-SmG" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xf2-Ux-Mie">
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
     var lastTimePlayed: Date?
     var lastTimeHungry: Date?
     var appLaunchTime:  Date?
-    var lastTimeHappy:  Date? //Cure? Morrissey? Joy Division?
+    var lastTimeUnhappy:  Date? //Cure? Morrissey? Joy Division?
     
     let feedInterval = 10.0
     let petInterval  = 10.0
@@ -146,43 +146,43 @@ class MainViewController: UIViewController {
     
     func updateHappiness() {
         
-        if let lastTimeHappy = lastTimeHappy {
-            let timeSinceLastTimeHappy = -1 * lastTimeHappy.timeIntervalSinceNow
-            if timeSinceLastTimeHappy >= recurringHappinessInterval {
+        if let lastTimeUnhappy = lastTimeUnhappy {
+            let timeSinceLastTimeUnhappy = -1 * lastTimeUnhappy.timeIntervalSinceNow
+            if timeSinceLastTimeUnhappy >= recurringHappinessInterval {
                 lion.happiness -= 10
-                self.lastTimeHappy = Date()
-                print("\(self.lastTimeHappy!): Updated happiness to \(lion.happiness)")
+                self.lastTimeUnhappy = Date()
+                print("\(self.lastTimeUnhappy!): Updated happiness to \(lion.happiness)")
             }
         } else {
             if let lastTimePet = lastTimePet {
                 let timeSinceLastPet = -1 * lastTimePet.timeIntervalSinceNow
                 if timeSinceLastPet >= initialHappinessInterval {
                     lion.happiness -= 10
-                    lastTimeHappy = Date()
-                    print("\(self.lastTimeHappy!): Updated happiness to \(lion.happiness)")
+                    lastTimeUnhappy = Date()
+                    print("\(self.lastTimeUnhappy!): Updated happiness to \(lion.happiness)")
                 }
             } else if let lastTimeCombed = lastTimeCombed {
                 let timeSinceLastCombed = -1 * lastTimeCombed.timeIntervalSinceNow
                 if timeSinceLastCombed >= initialHappinessInterval {
                     lion.happiness -= 10
-                    lastTimeHappy = Date()
-                    print("\(self.lastTimeHappy!): Updated happiness to \(lion.happiness)")
+                    lastTimeUnhappy = Date()
+                    print("\(self.lastTimeUnhappy!): Updated happiness to \(lion.happiness)")
                 }
                 
             } else if let lastTimePlayed = lastTimePlayed {
                 let timeSinceLastPlayed = -1 * lastTimePlayed.timeIntervalSinceNow
                 if timeSinceLastPlayed >= initialHappinessInterval {
                     lion.happiness -= 10
-                    lastTimeHappy = Date()
-                    print("\(self.lastTimeHappy!): Updated happiness to \(lion.happiness)")
+                    lastTimeUnhappy = Date()
+                    print("\(self.lastTimeUnhappy!): Updated happiness to \(lion.happiness)")
                 }
                 
             } else if let appLaunchTime = appLaunchTime {
                 let timeSinceAppLaunch = -1 * appLaunchTime.timeIntervalSinceNow
                 if timeSinceAppLaunch >= initialHappinessInterval {
                     lion.happiness -= 10
-                    lastTimeHappy = Date()
-                    print("\(self.lastTimeHappy!): Updated happiness to \(lion.happiness)")
+                    lastTimeUnhappy = Date()
+                    print("\(self.lastTimeUnhappy!): Updated happiness to \(lion.happiness)")
                 }
             }
         }

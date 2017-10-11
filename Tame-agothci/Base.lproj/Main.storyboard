@@ -146,7 +146,7 @@
         <!--Pick your Hoop-->
         <scene sceneID="Efe-hp-QRI">
             <objects>
-                <viewController storyboardIdentifier="GameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2B4-cR-SmG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2B4-cR-SmG" customClass="GameViewController" customModule="Tame_agothci" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xf2-Ux-Mie">
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,18 +192,31 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzM-UB-6lw">
                                                                 <rect key="frame" x="0.0" y="0.0" width="92" height="18"/>
                                                                 <state key="normal" title="Hoop 1"/>
+                                                                <connections>
+                                                                    <action selector="hoop1Pressed:" destination="2B4-cR-SmG" eventType="touchUpInside" id="jtf-qL-0hz"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXg-Kl-Che">
                                                                 <rect key="frame" x="92" y="0.0" width="92" height="18"/>
                                                                 <state key="normal" title="Hoop2"/>
+                                                                <connections>
+                                                                    <action selector="hoop2Pressed:" destination="2B4-cR-SmG" eventType="touchUpInside" id="FNy-RB-GZ2"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS6-yh-NNZ">
                                                                 <rect key="frame" x="184" y="0.0" width="92" height="18"/>
                                                                 <state key="normal" title="Hoop 3"/>
+                                                                <connections>
+                                                                    <action selector="hoop2Pressed:" destination="2B4-cR-SmG" eventType="touchUpInside" id="g2E-tX-4SX"/>
+                                                                    <action selector="hoop3Pressed:" destination="2B4-cR-SmG" eventType="touchUpInside" id="cCb-ef-CrY"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31M-Oa-04T">
                                                                 <rect key="frame" x="276" y="0.0" width="92" height="18"/>
                                                                 <state key="normal" title="Hoop 4"/>
+                                                                <connections>
+                                                                    <action selector="hoop4Pressed:" destination="2B4-cR-SmG" eventType="touchUpInside" id="vqx-qn-gVI"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -250,6 +263,13 @@
                         <viewLayoutGuide key="safeArea" id="dsd-vp-vwx"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pick your Hoop" id="Ib6-lg-Ext"/>
+                    <connections>
+                        <outlet property="messageLabel" destination="NuH-PH-6Yv" id="UN0-eB-OpC"/>
+                        <outlet property="opponentNameLabel" destination="wTW-cT-wDC" id="lcx-m8-2Yi"/>
+                        <outlet property="opponentScoreLabel" destination="NuH-PH-6Yv" id="i35-EQ-gd0"/>
+                        <outlet property="playerScoreLabel" destination="NTt-uQ-dQT" id="K4x-SW-S3V"/>
+                        <outlet property="roundLevelLabel" destination="H8e-2T-9G0" id="RXW-qe-oAe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kGs-lz-AbA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

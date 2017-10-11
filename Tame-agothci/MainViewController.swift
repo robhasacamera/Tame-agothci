@@ -254,6 +254,9 @@ class MainViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // TODO: Need to pass the lion data to the GameViewController
+        if let gameController = segue.destination as? GameViewController {
+            gameController.lion = lion
+        }
     }
 }
 

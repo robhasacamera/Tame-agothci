@@ -63,10 +63,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var petButton: UIButton!
     
     @IBAction func petButtonPressed(_ sender: Any) {
-        print("Pet was pressed")
         petButton.isEnabled = false
         lion.happiness += 5
-        lastTimePet = Date()
+        lastTimePet = nil
+        print("\(Date()): Pet was pressed")
     }
     
     @IBOutlet weak var hungerProgressView: UIProgressView!
@@ -78,7 +78,8 @@ class MainViewController: UIViewController {
         print("Comb was pressed")
         combButton.isEnabled = false
         lion.happiness += 10
-        lastTimeCombed = Date()
+        lastTimeCombed = nil
+        print("\(Date()): Comb was pressed")
     }
     
     @IBOutlet weak var playButton: UIButton!
@@ -87,7 +88,8 @@ class MainViewController: UIViewController {
         print("Play was pressed")
         playButton.isEnabled = false
         lion.happiness += 15
-        lastTimePlayed = Date()
+        lastTimePlayed = nil
+        print("\(Date()): Play was pressed")
     }
     
     @IBOutlet weak var hungerLabel: UILabel!

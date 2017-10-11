@@ -65,7 +65,8 @@ class MainViewController: UIViewController {
     @IBAction func petButtonPressed(_ sender: Any) {
         petButton.isEnabled = false
         lion.happiness += 5
-        lastTimePet = nil
+        lastTimePet = Date()
+        lastTimeUnhappy = nil
         print("\(Date()): Pet was pressed")
     }
     
@@ -78,7 +79,8 @@ class MainViewController: UIViewController {
         print("Comb was pressed")
         combButton.isEnabled = false
         lion.happiness += 10
-        lastTimeCombed = nil
+        lastTimeCombed = Date()
+        lastTimeUnhappy = nil
         print("\(Date()): Comb was pressed")
     }
     
@@ -88,7 +90,8 @@ class MainViewController: UIViewController {
         print("Play was pressed")
         playButton.isEnabled = false
         lion.happiness += 15
-        lastTimePlayed = nil
+        lastTimePlayed = Date()
+        lastTimeUnhappy = nil
         print("\(Date()): Play was pressed")
     }
     
@@ -100,6 +103,8 @@ class MainViewController: UIViewController {
     
     @IBAction func trainButtonPressed(_ sender: Any) {
         print("Train was pressed")
+        trainButton.isEnabled = false
+        
     }
     @objc func update() {
         updateHunger()
@@ -108,6 +113,7 @@ class MainViewController: UIViewController {
         updatePetButton()
         updateCombButton()
         updatePlayButton()
+        updateTrainButton()
         updateProgressViews()
         
         lastUpdateTime = Date()
@@ -235,6 +241,14 @@ class MainViewController: UIViewController {
             if timeSinceLastPlayed >= playInterval {
                 playButton.isEnabled = true
             }
+        }
+    }
+    
+    func updateTrainButton() {
+        if lion.hunger <= 20 && lion.happiness >= 80 {
+            trainButton.isEnabled = true
+        } else {
+            trainButton.isEnabled = false
         }
     }
     

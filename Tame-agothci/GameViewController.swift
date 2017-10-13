@@ -10,10 +10,30 @@ import UIKit
 
 class GameViewController: UIViewController {
     var lion: Lion?
+    var opponents = [Opponent]()
+    var selectedOpponent: Opponent?
+    var playerScore = 0
+    var opponentScore = 0
+    var currentRound = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        opponents.append(Opponent(correctGuessPercentage: 0.25, trainerName: "Ralph Newbie", lionName: "Hairball"))
+        opponents.append(Opponent(correctGuessPercentage: 0.50, trainerName: "Larry \"Scar\" Henderson", lionName: "Ghost"))
+        opponents.append(Opponent(correctGuessPercentage: 0.75, trainerName: "Leo Lionel", lionName: "Mr. Purrfect"))
         // Do any additional setup after loading the view.
+        
+        if let lion = lion {
+            selectedOpponent = opponents[(lion.level-1)]
+        }
+        if let selectedOpponent = selectedOpponent {
+            let opponentName = selectedOpponent.trainerName
+            let opponentLionName = selectedOpponent.lionName
+            opponentNameLabel.text = "\(opponentLionName) trained by \(opponentName)"
+            opponentScoreLabel.text = "Score: \(opponentScore)"
+            playerScoreLabel.text = "Score: \(playerScore)"
+            roundLevelLabel.text = "Round \(currentRound)"
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -103,7 +103,8 @@ class MainViewController: UIViewController {
     
     @IBAction func trainButtonPressed(_ sender: Any) {
         print("Train was pressed")
-        trainButton.isEnabled = false
+        // FIX MEEEEEE
+        //trainButton.isEnabled = false
         
     }
     @objc func update() {
@@ -248,7 +249,8 @@ class MainViewController: UIViewController {
         if lion.hunger <= 20 && lion.happiness >= 80 {
             trainButton.isEnabled = true
         } else {
-            trainButton.isEnabled = false
+            // FIX MEE
+            //trainButton.isEnabled = false
         }
     }
     

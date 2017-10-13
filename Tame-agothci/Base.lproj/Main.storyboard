@@ -166,17 +166,17 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="XgQ-Uk-Hfl" userLabel="Player Stack">
                                                 <rect key="frame" x="0.0" y="0.0" width="368" height="347.33333333333331"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ojU-UT-mht" userLabel="Name and Score Stack">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ojU-UT-mht" userLabel="Name and Score Stack">
                                                         <rect key="frame" x="0.0" y="0.0" width="368" height="12.333333333333329"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8e-2T-9G0">
-                                                                <rect key="frame" x="0.0" y="0.0" width="184" height="12.333333333333329"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8e-2T-9G0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="276.33333333333331" height="12.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTt-uQ-dQT">
-                                                                <rect key="frame" x="184" y="0.0" width="184" height="12.333333333333329"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTt-uQ-dQT">
+                                                                <rect key="frame" x="276.33333333333326" y="0.0" width="91.666666666666686" height="12.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -225,17 +225,17 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="K8K-VM-XFa" userLabel="Opponent Stack">
                                                 <rect key="frame" x="368" y="0.0" width="368" height="347.33333333333331"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gVx-Ud-Smv" userLabel="Name and Score Stack">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gVx-Ud-Smv" userLabel="Name and Score Stack">
                                                         <rect key="frame" x="0.0" y="0.0" width="368" height="24.333333333333329"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opponents Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTW-cT-wDC">
-                                                                <rect key="frame" x="0.0" y="0.0" width="184" height="24.333333333333329"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Opponents Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTW-cT-wDC">
+                                                                <rect key="frame" x="0.0" y="0.0" width="276.33333333333337" height="24.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqS-19-waU">
-                                                                <rect key="frame" x="184" y="0.0" width="184" height="24.333333333333329"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqS-19-waU">
+                                                                <rect key="frame" x="276.33333333333337" y="0.0" width="91.666666666666629" height="24.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -248,6 +248,9 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="H8e-2T-9G0" firstAttribute="width" secondItem="wTW-cT-wDC" secondAttribute="width" id="rck-UE-lrH"/>
+                                        </constraints>
                                         <variation key="heightClass=regular-widthClass=compact" axis="vertical"/>
                                     </stackView>
                                 </subviews>
@@ -266,7 +269,7 @@
                     <connections>
                         <outlet property="messageLabel" destination="NuH-PH-6Yv" id="UN0-eB-OpC"/>
                         <outlet property="opponentNameLabel" destination="wTW-cT-wDC" id="lcx-m8-2Yi"/>
-                        <outlet property="opponentScoreLabel" destination="NuH-PH-6Yv" id="i35-EQ-gd0"/>
+                        <outlet property="opponentScoreLabel" destination="CqS-19-waU" id="omM-pI-qoM"/>
                         <outlet property="playerScoreLabel" destination="NTt-uQ-dQT" id="K4x-SW-S3V"/>
                         <outlet property="roundLevelLabel" destination="H8e-2T-9G0" id="RXW-qe-oAe"/>
                     </connections>

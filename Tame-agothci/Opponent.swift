@@ -18,7 +18,7 @@ struct Opponent {
         
         let randomNumber = Int(arc4random_uniform(UInt32(precision)) + 1) // 1, 2, 3...1000
         
-        let guessUpperBounds = Int(correctGuessPercentage * Double(precision))
+        let guessUpperBounds = Int(correctGuessPercentage * Double(precision)) // .60 * 1000 = 600
         
         if randomNumber >= guessUpperBounds {
             return true

@@ -14,11 +14,11 @@ struct Opponent {
     var lionName: String
     
     public func hoopGuess() -> Bool {
-        let numberOfHoops = 4
+        let precision = 1000
         
-        let randomNumber = Int(arc4random_uniform(UInt32(numberOfHoops)) + 1) // 1, 2, 3, or 4
+        let randomNumber = Int(arc4random_uniform(UInt32(precision)) + 1) // 1, 2, 3...1000
         
-        let guessUpperBounds = Int(correctGuessPercentage * Double(numberOfHoops)) // 1, 2, 3
+        let guessUpperBounds = Int(correctGuessPercentage * Double(precision))
         
         if randomNumber >= guessUpperBounds {
             return true

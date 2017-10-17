@@ -15,6 +15,11 @@ class GameViewController: UIViewController {
     var playerScore = 0
     var opponentScore = 0
     var currentRound = 1
+    var hoop1 = 0
+    var hoop2 = 0
+    var hoop3 = 0
+    var hoop4 = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +39,7 @@ class GameViewController: UIViewController {
             playerScoreLabel.text = "Score: \(playerScore)"
             roundLevelLabel.text = "Round \(currentRound)"
         }
+        setupRound()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +48,23 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func hoop1Pressed(_ sender: Any) {
+        if hoop1 == 1 {
+            messageLabel.text = "You guessed correctly!"
+            playerScore += 1
+            playerScoreLabel.text = "Score: \(playerScore)"
+        } else {
+            messageLabel.text = "Wrong hoop.  Better luck next round."
+            
+        }
+        if let opponent = selectedOpponent, opponent.hoopGuess() {
+            opponentScore += 1
+            opponentScoreLabel.text = "Score: \(opponentScore)"
+        }
+        currentRound += 1
+        roundLevelLabel.text = "Round \(currentRound)"
+        hoop1 = 0
+        setupRound()
+        
     }
     
     @IBAction func hoop2Pressed(_ sender: Any) {
@@ -63,6 +86,22 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var messageLabel: UILabel!
     
+    func setupRound() {
+        let randomHoopNumber = (Int(arc4random_uniform(4)) + 1)
+        switch randomHoopNumber {
+        case 1:
+            hoop1 = 1
+        case 2:
+            hoop2 = 1
+        case 3:
+            hoop3 = 1
+        case 4:
+            hoop4 = 1
+        default:
+            print("Why did this happen?")
+        }
+        
+    }
     /*
     // MARK: - Navigation
 

@@ -20,7 +20,7 @@ struct Opponent {
         
         let guessUpperBounds = Int(correctGuessPercentage * Double(precision)) // .60 * 1000 = 600
         
-        if randomNumber >= guessUpperBounds {
+        if randomNumber <= guessUpperBounds {
             return true
         }
         

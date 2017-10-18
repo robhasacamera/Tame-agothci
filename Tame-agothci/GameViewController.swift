@@ -60,10 +60,13 @@ class GameViewController: UIViewController {
             opponentScore += 1
             opponentScoreLabel.text = "Score: \(opponentScore)"
         }
-        currentRound += 1
-        roundLevelLabel.text = "Round \(currentRound)"
-        hoop1 = 0
-        setupRound()
+        gameWinner()
+        if currentRound < 5 {
+            currentRound += 1
+            roundLevelLabel.text = "Round \(currentRound)"
+            hoop1 = 0
+            setupRound()
+        }
         
     }
     
@@ -77,14 +80,15 @@ class GameViewController: UIViewController {
     }
     
     @IBOutlet weak var roundLevelLabel: UILabel!
-    
     @IBOutlet weak var playerScoreLabel: UILabel!
-    
     @IBOutlet weak var opponentNameLabel: UILabel!
-    
     @IBOutlet weak var opponentScoreLabel: UILabel!
-    
     @IBOutlet weak var messageLabel: UILabel!
+    
+    @IBOutlet weak var hoop1Button: UIButton!
+    @IBOutlet weak var hoop2Button: UIButton!
+    @IBOutlet weak var hoop3Button: UIButton!
+    @IBOutlet weak var hoop4Button: UIButton!
     
     func setupRound() {
         let randomHoopNumber = (Int(arc4random_uniform(4)) + 1)
@@ -101,6 +105,24 @@ class GameViewController: UIViewController {
             print("Why did this happen?")
         }
         
+    }
+    
+    func gameWinner() {
+        if currentRound == 5 {
+            if playerScore > opponentScore {
+              messageLabel.text = "Congratulations! You won!"
+              lion?.level += 1
+              lion?.hunger = 30
+              lion?.happiness = 10
+            } else {
+                messageLabel.text = "Sorry. You lost."
+                lion?.happiness = 0
+            }
+            hoop1Button.isEnabled = false
+            hoop2Button.isEnabled = false
+            hoop3Button.isEnabled = false
+            hoop4Button.isEnabled = false
+        }
     }
     /*
     // MARK: - Navigation

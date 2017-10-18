@@ -45,6 +45,10 @@ class MainViewController: UIViewController {
         print("\(appLaunchTime!): App Launched")
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        // todo START TIMER
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

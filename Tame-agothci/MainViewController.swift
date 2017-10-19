@@ -36,17 +36,16 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
-        appLaunchTime = Date()
-        
         updateProgressViews()
         
-        print("\(appLaunchTime!): App Launched")
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         // todo START TIMER
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+        appLaunchTime = Date()
+        print("\(appLaunchTime!): App Launched")
     }
     
     override func didReceiveMemoryWarning() {
@@ -263,6 +262,8 @@ class MainViewController: UIViewController {
         if let gameController = segue.destination as? GameViewController {
             gameController.lion = lion
         }
+        timer?.invalidate()
+        timer = nil
     }
 }
 

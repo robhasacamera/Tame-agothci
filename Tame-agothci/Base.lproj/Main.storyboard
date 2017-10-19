@@ -30,10 +30,10 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="207" height="23.666666666666671"/>
                                                         <subviews>
                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bur-bb-1xJ" userLabel="Happiness Progress View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="207" height="0.0"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="207" height="2"/>
                                                             </progressView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Happiness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0IF-PS-5uu">
-                                                                <rect key="frame" x="0.0" y="0.0" width="207" height="23.666666666666671"/>
+                                                                <rect key="frame" x="0.0" y="2" width="207" height="21.666666666666671"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -44,10 +44,10 @@
                                                         <rect key="frame" x="207" y="0.0" width="207" height="23.666666666666671"/>
                                                         <subviews>
                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="K1J-Hn-Egg" userLabel="Hunger Progress View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="207" height="0.0"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="207" height="2"/>
                                                             </progressView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Hunger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqX-F9-mVi">
-                                                                <rect key="frame" x="0.0" y="0.0" width="207" height="23.666666666666671"/>
+                                                                <rect key="frame" x="0.0" y="2" width="207" height="21.666666666666671"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -249,7 +249,7 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="H8e-2T-9G0" firstAttribute="width" secondItem="wTW-cT-wDC" secondAttribute="width" id="rck-UE-lrH"/>
+                                            <constraint firstItem="NTt-uQ-dQT" firstAttribute="width" secondItem="CqS-19-waU" secondAttribute="width" id="brU-CS-1Ty"/>
                                         </constraints>
                                         <variation key="heightClass=regular-widthClass=compact" axis="vertical"/>
                                     </stackView>

@@ -71,12 +71,69 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func hoop2Pressed(_ sender: Any) {
+        if hoop2 == 1 {
+            messageLabel.text = "You guessed correctly!"
+            playerScore += 1
+            playerScoreLabel.text = "Score: \(playerScore)"
+        } else {
+            messageLabel.text = "Wrong hoop.  Better luck next round."
+            
+        }
+        if let opponent = selectedOpponent, opponent.hoopGuess() {
+            opponentScore += 1
+            opponentScoreLabel.text = "Score: \(opponentScore)"
+        }
+        gameWinner()
+        if currentRound < 5 {
+            currentRound += 1
+            roundLevelLabel.text = "Round \(currentRound)"
+            hoop2 = 0
+            setupRound()
+        }
     }
    
     @IBAction func hoop3Pressed(_ sender: Any) {
+        if hoop3 == 1 {
+            messageLabel.text = "You guessed correctly!"
+            playerScore += 1
+            playerScoreLabel.text = "Score: \(playerScore)"
+        } else {
+            messageLabel.text = "Wrong hoop.  Better luck next round."
+            
+        }
+        if let opponent = selectedOpponent, opponent.hoopGuess() {
+            opponentScore += 1
+            opponentScoreLabel.text = "Score: \(opponentScore)"
+        }
+        gameWinner()
+        if currentRound < 5 {
+            currentRound += 1
+            roundLevelLabel.text = "Round \(currentRound)"
+            hoop3 = 0
+            setupRound()
+        }
     }
     
     @IBAction func hoop4Pressed(_ sender: Any) {
+        if hoop4 == 1 {
+            messageLabel.text = "You guessed correctly!"
+            playerScore += 1
+            playerScoreLabel.text = "Score: \(playerScore)"
+        } else {
+            messageLabel.text = "Wrong hoop.  Better luck next round."
+            
+        }
+        if let opponent = selectedOpponent, opponent.hoopGuess() {
+            opponentScore += 1
+            opponentScoreLabel.text = "Score: \(opponentScore)"
+        }
+        gameWinner()
+        if currentRound < 5 {
+            currentRound += 1
+            roundLevelLabel.text = "Round \(currentRound)"
+            hoop4 = 0
+            setupRound()
+        }
     }
     
     @IBOutlet weak var roundLevelLabel: UILabel!

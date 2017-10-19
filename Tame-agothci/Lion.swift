@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Lion {
+public class Lion {
     var hunger: Int
     var happiness: Int
     var level: Int

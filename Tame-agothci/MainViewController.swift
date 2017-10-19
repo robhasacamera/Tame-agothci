@@ -46,6 +46,11 @@ class MainViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         appLaunchTime = Date()
         print("\(appLaunchTime!): App Launched")
+        feedButton.isEnabled = true
+        playButton.isEnabled = true
+        combButton.isEnabled = true
+        petButton.isEnabled = true
+        
     }
     
     override func didReceiveMemoryWarning() {

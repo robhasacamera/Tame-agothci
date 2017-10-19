@@ -264,6 +264,13 @@ class MainViewController: UIViewController {
         }
         timer?.invalidate()
         timer = nil
+        lastTimeFed = nil
+        lastTimePet = nil
+        lastTimeCombed = nil
+        lastTimePlayed = nil
+        lastTimeHungry = nil
+        appLaunchTime = nil
+        lastTimeUnhappy = nil
     }
 }
 

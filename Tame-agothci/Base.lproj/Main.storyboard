@@ -102,7 +102,7 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enF-IK-oCN">
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enF-IK-oCN">
                                                 <rect key="frame" x="0.0" y="63.333333333333371" width="414" height="31.666666666666629"/>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Train"/>
@@ -265,13 +265,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dsd-vp-vwx"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Pick your Hoop" id="Ib6-lg-Ext"/>
+                    <navigationItem key="navigationItem" title="Pick your Hoop" id="Ib6-lg-Ext">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="ce0-2C-UFe">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="2B4-cR-SmG" id="Xdp-na-uM6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="doneButton" destination="ce0-2C-UFe" id="14N-gl-73W"/>
                         <outlet property="hoop1Button" destination="lzM-UB-6lw" id="HFc-hh-2Aa"/>
                         <outlet property="hoop2Button" destination="zXg-Kl-Che" id="tJ0-LB-Sxy"/>
                         <outlet property="hoop3Button" destination="pS6-yh-NNZ" id="vhF-pF-Jmf"/>
                         <outlet property="hoop4Button" destination="31M-Oa-04T" id="0zS-pN-kr7"/>
                         <outlet property="messageLabel" destination="NuH-PH-6Yv" id="UN0-eB-OpC"/>
+                        <outlet property="opponentImageView" destination="9ex-wb-WSk" id="PDS-0X-ZSV"/>
                         <outlet property="opponentNameLabel" destination="wTW-cT-wDC" id="lcx-m8-2Yi"/>
                         <outlet property="opponentScoreLabel" destination="CqS-19-waU" id="omM-pI-qoM"/>
                         <outlet property="playerScoreLabel" destination="NTt-uQ-dQT" id="K4x-SW-S3V"/>

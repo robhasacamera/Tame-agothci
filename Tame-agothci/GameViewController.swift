@@ -23,9 +23,9 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        opponents.append(Opponent(correctGuessPercentage: 0.25, trainerName: "Ralph Newbie", lionName: "Hairball"))
-        opponents.append(Opponent(correctGuessPercentage: 0.50, trainerName: "Larry \"Scar\" Henderson", lionName: "Ghost"))
-        opponents.append(Opponent(correctGuessPercentage: 0.75, trainerName: "Leo Lionel", lionName: "Mr. Purrfect"))
+        opponents.append(Opponent(correctGuessPercentage: 0.25, trainerName: "Ralph Newbie", lionName: "Hairball", imageName: "HairBall"))
+        opponents.append(Opponent(correctGuessPercentage: 0.50, trainerName: "Larry \"Scar\" Henderson", lionName: "Ghost", imageName: "Ghost"))
+        opponents.append(Opponent(correctGuessPercentage: 0.75, trainerName: "Leo Lionel", lionName: "Mr. Purrfect", imageName: "MrPurrfect"))
         // Do any additional setup after loading the view.
         
         if let lion = lion {
@@ -38,7 +38,9 @@ class GameViewController: UIViewController {
             opponentScoreLabel.text = "Score: \(opponentScore)"
             playerScoreLabel.text = "Score: \(playerScore)"
             roundLevelLabel.text = "Round \(currentRound)"
+            opponentImageView.image = UIImage(named: selectedOpponent.imageName)
         }
+        doneButton.isEnabled = false
         setupRound()
     }
 
@@ -61,6 +63,9 @@ class GameViewController: UIViewController {
             opponentScoreLabel.text = "Score: \(opponentScore)"
         }
         gameWinner()
+        if currentRound == 5 {
+            doneButton.isEnabled = true
+        }
         if currentRound < 5 {
             currentRound += 1
             roundLevelLabel.text = "Round \(currentRound)"
@@ -84,12 +89,16 @@ class GameViewController: UIViewController {
             opponentScoreLabel.text = "Score: \(opponentScore)"
         }
         gameWinner()
+        if currentRound == 5 {
+            doneButton.isEnabled = true
+        }
         if currentRound < 5 {
             currentRound += 1
             roundLevelLabel.text = "Round \(currentRound)"
             hoop2 = 0
             setupRound()
         }
+        
     }
    
     @IBAction func hoop3Pressed(_ sender: Any) {
@@ -106,12 +115,16 @@ class GameViewController: UIViewController {
             opponentScoreLabel.text = "Score: \(opponentScore)"
         }
         gameWinner()
+        if currentRound == 5 {
+            doneButton.isEnabled = true
+        }
         if currentRound < 5 {
             currentRound += 1
             roundLevelLabel.text = "Round \(currentRound)"
             hoop3 = 0
             setupRound()
         }
+        
     }
     
     @IBAction func hoop4Pressed(_ sender: Any) {
@@ -128,12 +141,16 @@ class GameViewController: UIViewController {
             opponentScoreLabel.text = "Score: \(opponentScore)"
         }
         gameWinner()
+        if currentRound == 5 {
+            doneButton.isEnabled = true
+        }
         if currentRound < 5 {
             currentRound += 1
             roundLevelLabel.text = "Round \(currentRound)"
             hoop4 = 0
             setupRound()
         }
+        
     }
     
     @IBOutlet weak var roundLevelLabel: UILabel!
@@ -146,6 +163,19 @@ class GameViewController: UIViewController {
     @IBOutlet weak var hoop2Button: UIButton!
     @IBOutlet weak var hoop3Button: UIButton!
     @IBOutlet weak var hoop4Button: UIButton!
+    
+    @IBOutlet weak var opponentImageView: UIImageView!
+    
+    @IBOutlet weak var doneButton: UIBarButtonItem!
+    
+    @IBAction func doneButtonPressed(_ sender: Any) {
+       if currentRound == 5 {
+            doneButton.isEnabled = true
+        }
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     
     func setupRound() {
         let randomHoopNumber = (Int(arc4random_uniform(4)) + 1)

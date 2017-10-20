@@ -12,6 +12,7 @@ struct Opponent {
     var correctGuessPercentage: Double
     var trainerName: String
     var lionName: String
+    var imageName: String
     
     public func hoopGuess() -> Bool {
         let precision = 1000

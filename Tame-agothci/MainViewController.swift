@@ -22,14 +22,14 @@ class MainViewController: UIViewController {
     var appLaunchTime:  Date?
     var lastTimeUnhappy:  Date? //Cure? Morrissey? Joy Division?
     
-    let feedInterval = 10.0
-    let petInterval  = 10.0
-    let combInterval = 20.0
-    let playInterval = 45.0
-    let initialHungerInterval = 60.0
-    let reoccuringHungerInterval = 15.0
-    let initialHappinessInterval = 90.0
-    let recurringHappinessInterval = 15.0
+    var feedInterval = 10.0
+    var petInterval  = 10.0
+    var combInterval = 20.0
+    var playInterval = 45.0
+    var initialHungerInterval = 60.0
+    var reoccuringHungerInterval = 15.0
+    var initialHappinessInterval = 90.0
+    var recurringHappinessInterval = 15.0
     
     var lion = Lion(hunger: 30, happiness: 10)
     
@@ -37,6 +37,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateProgressViews()
+        setupForDebug()
         
         
     }
@@ -111,8 +112,7 @@ class MainViewController: UIViewController {
     
     @IBAction func trainButtonPressed(_ sender: Any) {
         print("Train was pressed")
-        // FIX MEEEEEE
-        //trainButton.isEnabled = false
+        trainButton.isEnabled = false
         
     }
     @objc func update() {
@@ -152,10 +152,6 @@ class MainViewController: UIViewController {
                     print("\(lastTimeHungry!): Updated hunger to \(lion.hunger)")
                 }
             }
-        }
-        
-        if lion.hunger > 100 {
-            lion.hunger = 100
         }
     }
     
@@ -202,10 +198,6 @@ class MainViewController: UIViewController {
                     print("\(self.lastTimeUnhappy!): Updated happiness to \(lion.happiness)")
                 }
             }
-        }
-        
-        if lion.happiness < 0 {
-            lion.happiness = 0
         }
     }
     
@@ -257,13 +249,11 @@ class MainViewController: UIViewController {
         if lion.hunger <= 20 && lion.happiness >= 80 {
             trainButton.isEnabled = true
         } else {
-            // FIX MEE
-            //trainButton.isEnabled = false
+            trainButton.isEnabled = false
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // TODO: Need to pass the lion data to the GameViewController
         if let gameController = segue.destination as? GameViewController {
             gameController.lion = lion
         }
@@ -276,6 +266,18 @@ class MainViewController: UIViewController {
         lastTimeHungry = nil
         appLaunchTime = nil
         lastTimeUnhappy = nil
+    }
+    
+    func setupForDebug() {
+        let cheatPercentage = 0.1
+        feedInterval = 10.0 * cheatPercentage
+        petInterval  = 10.0 * cheatPercentage
+        combInterval = 20.0 * cheatPercentage
+        playInterval = 45.0 * cheatPercentage
+        initialHungerInterval = 60.0 * cheatPercentage
+        reoccuringHungerInterval = 15.0 * cheatPercentage
+        initialHappinessInterval = 90.0 * cheatPercentage
+        recurringHappinessInterval = 15.0 * cheatPercentage
     }
 }
 

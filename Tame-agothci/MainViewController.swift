@@ -9,17 +9,18 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    
-    var lastUpdateTime = Date()
+    //Defined Variables
+    var lion = Lion(hunger: 30, happiness: 10)
     
     var timer: Timer?
+    var lastUpdateTime = Date()
+    var appLaunchTime:  Date?
     
     var lastTimeFed:    Date?
     var lastTimePet:    Date?
     var lastTimeCombed: Date?
     var lastTimePlayed: Date?
     var lastTimeHungry: Date?
-    var appLaunchTime:  Date?
     var lastTimeUnhappy:  Date? //Cure? Morrissey? Joy Division?
     
     var feedInterval = 10.0
@@ -31,19 +32,26 @@ class MainViewController: UIViewController {
     var initialHappinessInterval = 90.0
     var recurringHappinessInterval = 15.0
     
-    var lion = Lion(hunger: 30, happiness: 10)
+    //Views, Labels, and Buttons
+    @IBOutlet weak var hungerProgressView: UIProgressView!
+    @IBOutlet weak var happinessProgressView: UIProgressView!
+    @IBOutlet weak var hungerLabel: UILabel!
+    @IBOutlet weak var happinessLabel: UILabel!
+    
+    @IBOutlet weak var feedButton: UIButton!
+    @IBOutlet weak var petButton: UIButton!
+    @IBOutlet weak var combButton: UIButton!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var trainButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateProgressViews()
         setupForDebug()
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        // todo START TIMER
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         appLaunchTime = Date()
         print("\(appLaunchTime!): App Launched")
@@ -51,7 +59,6 @@ class MainViewController: UIViewController {
         playButton.isEnabled = true
         combButton.isEnabled = true
         petButton.isEnabled = true
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,62 +66,6 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet weak var feedButton: UIButton!
-    
-    @IBAction func feedButtonPressed(_ sender: Any) {
-        feedButton.isEnabled = false
-        lion.hunger -= 10
-        lastTimeFed = Date()
-        lastTimeHungry = nil
-        print("\(Date()): Feed was pressed")
-    }
-    
-    @IBOutlet weak var petButton: UIButton!
-    
-    @IBAction func petButtonPressed(_ sender: Any) {
-        petButton.isEnabled = false
-        lion.happiness += 5
-        lastTimePet = Date()
-        lastTimeUnhappy = nil
-        print("\(Date()): Pet was pressed")
-    }
-    
-    @IBOutlet weak var hungerProgressView: UIProgressView!
-    @IBOutlet weak var happinessProgressView: UIProgressView!
-    
-    @IBOutlet weak var combButton: UIButton!
-    
-    @IBAction func combButtonPressed(_ sender: Any) {
-        print("Comb was pressed")
-        combButton.isEnabled = false
-        lion.happiness += 10
-        lastTimeCombed = Date()
-        lastTimeUnhappy = nil
-        print("\(Date()): Comb was pressed")
-    }
-    
-    @IBOutlet weak var playButton: UIButton!
-    
-    @IBAction func playButtonPressed(_ sender: Any) {
-        print("Play was pressed")
-        playButton.isEnabled = false
-        lion.happiness += 15
-        lastTimePlayed = Date()
-        lastTimeUnhappy = nil
-        print("\(Date()): Play was pressed")
-    }
-    
-    @IBOutlet weak var hungerLabel: UILabel!
-    @IBOutlet weak var happinessLabel: UILabel!
-    
-    
-    @IBOutlet weak var trainButton: UIButton!
-    
-    @IBAction func trainButtonPressed(_ sender: Any) {
-        print("Train was pressed")
-        trainButton.isEnabled = false
-        
-    }
     @objc func update() {
         updateHunger()
         updateHappiness()
@@ -128,6 +79,47 @@ class MainViewController: UIViewController {
         lastUpdateTime = Date()
     }
     
+    //Button Actions
+    @IBAction func feedButtonPressed(_ sender: Any) {
+        feedButton.isEnabled = false
+        lion.hunger -= 10
+        lastTimeFed = Date()
+        lastTimeHungry = nil
+        print("\(Date()): Feed was pressed")
+    }
+    
+    @IBAction func petButtonPressed(_ sender: Any) {
+        petButton.isEnabled = false
+        lion.happiness += 5
+        lastTimePet = Date()
+        lastTimeUnhappy = nil
+        print("\(Date()): Pet was pressed")
+    }
+    
+    @IBAction func combButtonPressed(_ sender: Any) {
+        print("Comb was pressed")
+        combButton.isEnabled = false
+        lion.happiness += 10
+        lastTimeCombed = Date()
+        lastTimeUnhappy = nil
+        print("\(Date()): Comb was pressed")
+    }
+    
+    @IBAction func playButtonPressed(_ sender: Any) {
+        print("Play was pressed")
+        playButton.isEnabled = false
+        lion.happiness += 15
+        lastTimePlayed = Date()
+        lastTimeUnhappy = nil
+        print("\(Date()): Play was pressed")
+    }
+    
+    @IBAction func trainButtonPressed(_ sender: Any) {
+        print("Train was pressed")
+        trainButton.isEnabled = false
+    }
+    
+    //Update Buttons
     func updateHunger() {
         if let lastTimeHungry = lastTimeHungry {
             let timeSinceLastTimeHungry = -1 * lastTimeHungry.timeIntervalSinceNow
@@ -154,8 +146,6 @@ class MainViewController: UIViewController {
             }
         }
     }
-    
-
     
     func updateHappiness() {
         
@@ -201,14 +191,6 @@ class MainViewController: UIViewController {
         }
     }
     
-    
-    func updateProgressViews() {
-        happinessProgressView.progress = Float(lion.happiness) / Float(100)
-        happinessLabel.text = "Happiness: \(lion.happiness)"
-        hungerProgressView.progress = Float(lion.hunger) / Float(100)
-        hungerLabel.text = "Hunger: \(lion.hunger)"
-    }
-    
     func updateFeedButton() {
         if let lastTimeFed = lastTimeFed {
             let timeSinceLastFed = -1 * lastTimeFed.timeIntervalSinceNow
@@ -251,6 +233,14 @@ class MainViewController: UIViewController {
         } else {
             trainButton.isEnabled = false
         }
+    }
+    
+    //Update Progress Views
+    func updateProgressViews() {
+        happinessProgressView.progress = Float(lion.happiness) / Float(100)
+        happinessLabel.text = "Happiness: \(lion.happiness)"
+        hungerProgressView.progress = Float(lion.hunger) / Float(100)
+        hungerLabel.text = "Hunger: \(lion.hunger)"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

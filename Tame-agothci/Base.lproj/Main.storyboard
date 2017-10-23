@@ -160,32 +160,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gFS-ag-n5M">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gFS-ag-n5M">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which hoop will your Lion Jump through? (pick one)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NuH-PH-6Yv">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="14.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kDV-m1-F51" userLabel="Players Stack">
-                                        <rect key="frame" x="0.0" y="34.666666666666686" width="414" height="637.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="69" width="414" height="603"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="XgQ-Uk-Hfl" userLabel="Player Stack">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="318.66666666666663"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="XgQ-Uk-Hfl" userLabel="Player Stack">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="301.66666666666669"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ojU-UT-mht" userLabel="Name and Score Stack">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="12.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.333333333333343"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8e-2T-9G0">
-                                                                <rect key="frame" x="0.0" y="0.0" width="199.66666666666666" height="12.333333333333329"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="199.66666666666666" height="20.333333333333343"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTt-uQ-dQT">
-                                                                <rect key="frame" x="199.66666666666663" y="0.0" width="214.33333333333337" height="12.333333333333329"/>
+                                                                <rect key="frame" x="199.66666666666663" y="0.0" width="214.33333333333337" height="20.333333333333343"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -193,27 +193,27 @@
                                                         </subviews>
                                                     </stackView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lion-Main" translatesAutoresizingMaskIntoConstraints="NO" id="RZn-Fr-pow">
-                                                        <rect key="frame" x="0.0" y="12.333333333333343" width="414" height="288.33333333333326"/>
+                                                        <rect key="frame" x="0.0" y="20.333333333333329" width="414" height="251.33333333333337"/>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="c5g-ep-7JN" userLabel="Hoop Button Stack">
-                                                        <rect key="frame" x="0.0" y="300.66666666666663" width="414" height="18"/>
+                                                        <rect key="frame" x="0.0" y="271.66666666666669" width="414" height="30"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzM-UB-6lw">
-                                                                <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="18"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="30"/>
                                                                 <state key="normal" title="Hoop 1"/>
                                                                 <connections>
                                                                     <action selector="hoop1Pressed:" destination="2B4-cR-SmG" eventType="touchUpInside" id="jtf-qL-0hz"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXg-Kl-Che">
-                                                                <rect key="frame" x="103.66666666666669" y="0.0" width="103.33333333333331" height="18"/>
+                                                                <rect key="frame" x="103.66666666666669" y="0.0" width="103.33333333333331" height="30"/>
                                                                 <state key="normal" title="Hoop2"/>
                                                                 <connections>
                                                                     <action selector="hoop2Pressed:" destination="2B4-cR-SmG" eventType="touchUpInside" id="FNy-RB-GZ2"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS6-yh-NNZ">
-                                                                <rect key="frame" x="207.00000000000003" y="0.0" width="103.66666666666671" height="18"/>
+                                                                <rect key="frame" x="207.00000000000003" y="0.0" width="103.66666666666671" height="30"/>
                                                                 <state key="normal" title="Hoop 3"/>
                                                                 <connections>
                                                                     <action selector="hoop2Pressed:" destination="2B4-cR-SmG" eventType="touchUpInside" id="g2E-tX-4SX"/>
@@ -221,7 +221,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31M-Oa-04T">
-                                                                <rect key="frame" x="310.66666666666674" y="0.0" width="103.33333333333331" height="18"/>
+                                                                <rect key="frame" x="310.66666666666674" y="0.0" width="103.33333333333331" height="30"/>
                                                                 <state key="normal" title="Hoop 4"/>
                                                                 <connections>
                                                                     <action selector="hoop4Pressed:" destination="2B4-cR-SmG" eventType="touchUpInside" id="vqx-qn-gVI"/>
@@ -231,20 +231,20 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="K8K-VM-XFa" userLabel="Opponent Stack">
-                                                <rect key="frame" x="0.0" y="318.66666666666663" width="414" height="318.66666666666663"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="K8K-VM-XFa" userLabel="Opponent Stack">
+                                                <rect key="frame" x="0.0" y="301.66666666666674" width="414" height="301.33333333333326"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gVx-Ud-Smv" userLabel="Name and Score Stack">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="22.333333333333371"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.333333333333314"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Opponents Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTW-cT-wDC">
-                                                                <rect key="frame" x="0.0" y="0.0" width="310.66666666666669" height="22.333333333333371"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="310.66666666666669" height="20.333333333333314"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqS-19-waU">
-                                                                <rect key="frame" x="310.66666666666674" y="0.0" width="103.33333333333331" height="22.333333333333371"/>
+                                                                <rect key="frame" x="310.66666666666674" y="0.0" width="103.33333333333331" height="20.333333333333314"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -252,7 +252,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Scar" translatesAutoresizingMaskIntoConstraints="NO" id="9ex-wb-WSk">
-                                                        <rect key="frame" x="0.0" y="22.333333333333371" width="414" height="296.33333333333331"/>
+                                                        <rect key="frame" x="0.0" y="31.333333333333314" width="414" height="270"/>
                                                     </imageView>
                                                 </subviews>
                                             </stackView>

@@ -303,7 +303,18 @@
                     <view key="view" contentMode="scaleToFill" id="kTq-5I-7WC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Simba" translatesAutoresizingMaskIntoConstraints="NO" id="qSz-bg-qYU">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cOb-AB-KyX" firstAttribute="trailing" secondItem="qSz-bg-qYU" secondAttribute="trailing" id="HxT-uN-x50"/>
+                            <constraint firstItem="qSz-bg-qYU" firstAttribute="top" secondItem="cOb-AB-KyX" secondAttribute="top" id="a3a-P7-CgY"/>
+                            <constraint firstItem="cOb-AB-KyX" firstAttribute="bottom" secondItem="qSz-bg-qYU" secondAttribute="bottom" id="w6C-6V-ppx"/>
+                            <constraint firstItem="qSz-bg-qYU" firstAttribute="leading" secondItem="cOb-AB-KyX" secondAttribute="leading" id="woh-6e-rGW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cOb-AB-KyX"/>
                     </view>
                 </viewController>
@@ -333,5 +344,6 @@
     <resources>
         <image name="Lion-Main" width="400" height="476"/>
         <image name="Scar" width="247" height="270"/>
+        <image name="Simba" width="536" height="525"/>
     </resources>
 </document>

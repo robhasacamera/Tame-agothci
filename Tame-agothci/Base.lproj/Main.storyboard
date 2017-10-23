@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,16 +24,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="577"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hcN-vw-QfP">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="23.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="23.666666666666668"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9pq-59-H4L">
-                                                        <rect key="frame" x="0.0" y="0.0" width="207" height="23.666666666666671"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="207" height="23.666666666666668"/>
                                                         <subviews>
                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bur-bb-1xJ" userLabel="Happiness Progress View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="2"/>
                                                             </progressView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Happiness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0IF-PS-5uu">
-                                                                <rect key="frame" x="0.0" y="2" width="207" height="21.666666666666671"/>
+                                                                <rect key="frame" x="0.0" y="2" width="207" height="21.666666666666668"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -41,13 +41,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LsG-vm-KUy">
-                                                        <rect key="frame" x="207" y="0.0" width="207" height="23.666666666666671"/>
+                                                        <rect key="frame" x="207" y="0.0" width="207" height="23.666666666666668"/>
                                                         <subviews>
                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="K1J-Hn-Egg" userLabel="Hunger Progress View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="2"/>
                                                             </progressView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Hunger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqX-F9-mVi">
-                                                                <rect key="frame" x="0.0" y="2" width="207" height="21.666666666666671"/>
+                                                                <rect key="frame" x="0.0" y="2" width="207" height="21.666666666666668"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -66,7 +66,7 @@
                                         <rect key="frame" x="0.0" y="577" width="414" height="95"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOa-ej-55v">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="31.666666666666629"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="31.666666666666668"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Feed"/>
                                                 <connections>
@@ -74,10 +74,10 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yJA-cl-HBM">
-                                                <rect key="frame" x="0.0" y="31.666666666666629" width="414" height="31.666666666666742"/>
+                                                <rect key="frame" x="0.0" y="31.666666666666629" width="414" height="31.666666666666671"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yL-Ea-kaT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="31.666666666666742"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="31.666666666666668"/>
                                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                         <state key="normal" title="Pet"/>
                                                         <connections>
@@ -85,7 +85,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcy-B8-aTM">
-                                                        <rect key="frame" x="138" y="0.0" width="138" height="31.666666666666742"/>
+                                                        <rect key="frame" x="138" y="0.0" width="138" height="31.666666666666668"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <state key="normal" title="Comb"/>
                                                         <connections>
@@ -93,7 +93,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDS-la-aFO" userLabel="Play Button">
-                                                        <rect key="frame" x="276" y="0.0" width="138" height="31.666666666666742"/>
+                                                        <rect key="frame" x="276" y="0.0" width="138" height="31.666666666666668"/>
                                                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="Play"/>
                                                         <connections>
@@ -103,7 +103,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enF-IK-oCN">
-                                                <rect key="frame" x="0.0" y="63.333333333333371" width="414" height="31.666666666666629"/>
+                                                <rect key="frame" x="0.0" y="63.333333333333364" width="414" height="31.666666666666664"/>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Train"/>
                                                 <connections>
@@ -155,7 +155,7 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which hoop will your Lion Jump through? (pick one)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NuH-PH-6Yv">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="13.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="13.666666666666666"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -176,7 +176,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTt-uQ-dQT">
-                                                                <rect key="frame" x="310.66666666666674" y="0.33333333333334281" width="103.33333333333331" height="11"/>
+                                                                <rect key="frame" x="310.66666666666669" y="0.33333333333334281" width="103.33333333333331" height="11"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -187,24 +187,24 @@
                                                         <rect key="frame" x="0.0" y="11.333333333333343" width="414" height="291.33333333333326"/>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="c5g-ep-7JN" userLabel="Hoop Button Stack">
-                                                        <rect key="frame" x="0.0" y="302.66666666666663" width="414" height="16.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="302.66666666666669" width="414" height="16.666666666666686"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzM-UB-6lw">
-                                                                <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="16.666666666666686"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="16.666666666666668"/>
                                                                 <state key="normal" title="Hoop 1"/>
                                                                 <connections>
                                                                     <action selector="hoop1Pressed:" destination="2B4-cR-SmG" eventType="touchUpInside" id="jtf-qL-0hz"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXg-Kl-Che">
-                                                                <rect key="frame" x="103.66666666666669" y="0.0" width="103.33333333333331" height="16.666666666666686"/>
+                                                                <rect key="frame" x="103.66666666666669" y="0.0" width="103.33333333333331" height="16.666666666666668"/>
                                                                 <state key="normal" title="Hoop2"/>
                                                                 <connections>
                                                                     <action selector="hoop2Pressed:" destination="2B4-cR-SmG" eventType="touchUpInside" id="FNy-RB-GZ2"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS6-yh-NNZ">
-                                                                <rect key="frame" x="207.00000000000003" y="0.0" width="103.66666666666671" height="16.666666666666686"/>
+                                                                <rect key="frame" x="206.99999999999997" y="0.0" width="103.66666666666666" height="16.666666666666668"/>
                                                                 <state key="normal" title="Hoop 3"/>
                                                                 <connections>
                                                                     <action selector="hoop2Pressed:" destination="2B4-cR-SmG" eventType="touchUpInside" id="g2E-tX-4SX"/>
@@ -212,7 +212,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31M-Oa-04T">
-                                                                <rect key="frame" x="310.66666666666674" y="0.0" width="103.33333333333331" height="16.666666666666686"/>
+                                                                <rect key="frame" x="310.66666666666669" y="0.0" width="103.33333333333331" height="16.666666666666668"/>
                                                                 <state key="normal" title="Hoop 4"/>
                                                                 <connections>
                                                                     <action selector="hoop4Pressed:" destination="2B4-cR-SmG" eventType="touchUpInside" id="vqx-qn-gVI"/>
@@ -226,16 +226,16 @@
                                                 <rect key="frame" x="0.0" y="319.33333333333337" width="414" height="319.33333333333337"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gVx-Ud-Smv" userLabel="Name and Score Stack">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="22.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="22.333333333333332"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Opponents Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTW-cT-wDC">
-                                                                <rect key="frame" x="0.0" y="0.0" width="310.66666666666669" height="22.333333333333314"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="310.66666666666669" height="22.333333333333332"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqS-19-waU">
-                                                                <rect key="frame" x="310.66666666666674" y="0.0" width="103.33333333333331" height="22.333333333333314"/>
+                                                                <rect key="frame" x="310.66666666666669" y="0.0" width="103.33333333333331" height="22.333333333333332"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>

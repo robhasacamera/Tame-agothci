@@ -20,6 +20,19 @@ class GameViewController: UIViewController {
     var hoop3 = 0
     var hoop4 = 0
     
+    @IBOutlet weak var roundLevelLabel: UILabel!
+    @IBOutlet weak var playerScoreLabel: UILabel!
+    @IBOutlet weak var opponentNameLabel: UILabel!
+    @IBOutlet weak var opponentScoreLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var opponentImageView: UIImageView!
+    
+    @IBOutlet weak var hoop1Button: UIButton!
+    @IBOutlet weak var hoop2Button: UIButton!
+    @IBOutlet weak var hoop3Button: UIButton!
+    @IBOutlet weak var hoop4Button: UIButton!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +62,7 @@ class GameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //Button Actions
     @IBAction func hoop1Pressed(_ sender: Any) {
         if hoop1 == 1 {
             messageLabel.text = "You guessed correctly!"
@@ -56,13 +70,13 @@ class GameViewController: UIViewController {
             playerScoreLabel.text = "Score: \(playerScore)"
         } else {
             messageLabel.text = "Wrong hoop.  Better luck next round."
-            
         }
         if let opponent = selectedOpponent, opponent.hoopGuess() {
             opponentScore += 1
             opponentScoreLabel.text = "Score: \(opponentScore)"
         }
         gameWinner()
+        
         if currentRound == 5 {
             doneButton.isEnabled = true
         }
@@ -72,7 +86,6 @@ class GameViewController: UIViewController {
             hoop1 = 0
             setupRound()
         }
-        
     }
     
     @IBAction func hoop2Pressed(_ sender: Any) {
@@ -82,13 +95,13 @@ class GameViewController: UIViewController {
             playerScoreLabel.text = "Score: \(playerScore)"
         } else {
             messageLabel.text = "Wrong hoop.  Better luck next round."
-            
         }
         if let opponent = selectedOpponent, opponent.hoopGuess() {
             opponentScore += 1
             opponentScoreLabel.text = "Score: \(opponentScore)"
         }
         gameWinner()
+        
         if currentRound == 5 {
             doneButton.isEnabled = true
         }
@@ -98,7 +111,6 @@ class GameViewController: UIViewController {
             hoop2 = 0
             setupRound()
         }
-        
     }
    
     @IBAction func hoop3Pressed(_ sender: Any) {
@@ -108,13 +120,13 @@ class GameViewController: UIViewController {
             playerScoreLabel.text = "Score: \(playerScore)"
         } else {
             messageLabel.text = "Wrong hoop.  Better luck next round."
-            
         }
         if let opponent = selectedOpponent, opponent.hoopGuess() {
             opponentScore += 1
             opponentScoreLabel.text = "Score: \(opponentScore)"
         }
         gameWinner()
+       
         if currentRound == 5 {
             doneButton.isEnabled = true
         }
@@ -124,7 +136,6 @@ class GameViewController: UIViewController {
             hoop3 = 0
             setupRound()
         }
-        
     }
     
     @IBAction func hoop4Pressed(_ sender: Any) {
@@ -133,8 +144,7 @@ class GameViewController: UIViewController {
             playerScore += 1
             playerScoreLabel.text = "Score: \(playerScore)"
         } else {
-            messageLabel.text = "Wrong hoop.  Better luck next round."
-            
+            messageLabel.text = "Wrong hoop.  Better luck next round."            
         }
         if let opponent = selectedOpponent, opponent.hoopGuess() {
             opponentScore += 1
@@ -150,23 +160,7 @@ class GameViewController: UIViewController {
             hoop4 = 0
             setupRound()
         }
-        
-    }
-    
-    @IBOutlet weak var roundLevelLabel: UILabel!
-    @IBOutlet weak var playerScoreLabel: UILabel!
-    @IBOutlet weak var opponentNameLabel: UILabel!
-    @IBOutlet weak var opponentScoreLabel: UILabel!
-    @IBOutlet weak var messageLabel: UILabel!
-    
-    @IBOutlet weak var hoop1Button: UIButton!
-    @IBOutlet weak var hoop2Button: UIButton!
-    @IBOutlet weak var hoop3Button: UIButton!
-    @IBOutlet weak var hoop4Button: UIButton!
-    
-    @IBOutlet weak var opponentImageView: UIImageView!
-    
-    @IBOutlet weak var doneButton: UIBarButtonItem!
+    }    
     
     @IBAction func doneButtonPressed(_ sender: Any) {
        if currentRound == 5 {
@@ -176,7 +170,7 @@ class GameViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    
+    //Training Functions
     func setupRound() {
         let randomHoopNumber = (Int(arc4random_uniform(4)) + 1)
         switch randomHoopNumber {
@@ -190,8 +184,7 @@ class GameViewController: UIViewController {
             hoop4 = 1
         default:
             print("Why did this happen?")
-        }
-        
+        }        
     }
     
     func gameWinner() {

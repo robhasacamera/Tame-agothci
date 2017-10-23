@@ -43,6 +43,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var combButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var trainButton: UIButton!
+    @IBOutlet weak var performButton: UIButton!
+    @IBOutlet weak var lionImage: UIImageView!
     
     
     override func viewDidLoad() {
@@ -59,6 +61,16 @@ class MainViewController: UIViewController {
         playButton.isEnabled = true
         combButton.isEnabled = true
         petButton.isEnabled = true
+        
+        if lion.level == 4 {
+            trainButton.isHidden = true
+            performButton.isHidden = false
+        } else {
+            trainButton.isHidden = false
+            performButton.isHidden = true
+        }
+        
+        lionImage.image = #imageLiteral(resourceName: "Lion-Main")
     }
     
     override func didReceiveMemoryWarning() {
@@ -79,12 +91,13 @@ class MainViewController: UIViewController {
         lastUpdateTime = Date()
     }
     
-    //Button Actions
+    // Button Actions
     @IBAction func feedButtonPressed(_ sender: Any) {
         feedButton.isEnabled = false
         lion.hunger -= 10
         lastTimeFed = Date()
         lastTimeHungry = nil
+        lionImage.image = #imageLiteral(resourceName: "Lion-feed")
         print("\(Date()): Feed was pressed")
     }
     
@@ -93,6 +106,7 @@ class MainViewController: UIViewController {
         lion.happiness += 5
         lastTimePet = Date()
         lastTimeUnhappy = nil
+        lionImage.image = #imageLiteral(resourceName: "Lion-pet")
         print("\(Date()): Pet was pressed")
     }
     
@@ -102,6 +116,7 @@ class MainViewController: UIViewController {
         lion.happiness += 10
         lastTimeCombed = Date()
         lastTimeUnhappy = nil
+        lionImage.image = #imageLiteral(resourceName: "Lion-comb")
         print("\(Date()): Comb was pressed")
     }
     
@@ -111,6 +126,7 @@ class MainViewController: UIViewController {
         lion.happiness += 15
         lastTimePlayed = Date()
         lastTimeUnhappy = nil
+        lionImage.image = #imageLiteral(resourceName: "Lion-play")
         print("\(Date()): Play was pressed")
     }
     
@@ -268,6 +284,7 @@ class MainViewController: UIViewController {
         reoccuringHungerInterval = 15.0 * cheatPercentage
         initialHappinessInterval = 90.0 * cheatPercentage
         recurringHappinessInterval = 15.0 * cheatPercentage
+        //lion.level = 4
     }
 }
 

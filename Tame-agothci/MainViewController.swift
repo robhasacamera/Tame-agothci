@@ -284,7 +284,7 @@ class MainViewController: UIViewController {
         reoccuringHungerInterval = 15.0 * cheatPercentage
         initialHappinessInterval = 90.0 * cheatPercentage
         recurringHappinessInterval = 15.0 * cheatPercentage
-        //lion.level = 4
+        lion.level = 4
     }
 }
 

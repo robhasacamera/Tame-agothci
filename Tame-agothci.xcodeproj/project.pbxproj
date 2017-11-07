@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B555BE891FB24C6B009463FF /* SimonSaysAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B555BE881FB24C6B009463FF /* SimonSaysAction.swift */; };
 		E181E2FB1F7AC1B90082B67A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E181E2FA1F7AC1B90082B67A /* AppDelegate.swift */; };
 		E181E2FD1F7AC1B90082B67A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E181E2FC1F7AC1B90082B67A /* MainViewController.swift */; };
 		E181E3001F7AC1B90082B67A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E181E2FE1F7AC1B90082B67A /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B555BE881FB24C6B009463FF /* SimonSaysAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimonSaysAction.swift; sourceTree = "<group>"; };
 		E181E2F71F7AC1B90082B67A /* Tame-agothci.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tame-agothci.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E181E2FA1F7AC1B90082B67A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E181E2FC1F7AC1B90082B67A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				E181E3091F7AC1B90082B67A /* Info.plist */,
 				E181E3011F7AC1B90082B67A /* Tame_agothci.xcdatamodeld */,
 				E181E30F1F7ACAB00082B67A /* Lion.swift */,
+				B555BE881FB24C6B009463FF /* SimonSaysAction.swift */,
 			);
 			path = "Tame-agothci";
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				E181E3141F8E96200082B67A /* GameViewController.swift in Sources */,
 				E181E3031F7AC1B90082B67A /* Tame_agothci.xcdatamodeld in Sources */,
 				E181E3161F8E9E090082B67A /* Opponent.swift in Sources */,
+				B555BE891FB24C6B009463FF /* SimonSaysAction.swift in Sources */,
 				E181E2FD1F7AC1B90082B67A /* MainViewController.swift in Sources */,
 				E181E2FB1F7AC1B90082B67A /* AppDelegate.swift in Sources */,
 				E181E3101F7ACAB00082B67A /* Lion.swift in Sources */,

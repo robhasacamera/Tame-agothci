@@ -14,7 +14,7 @@ class PerformViewController: UIViewController {
         SimonSaysAction.balancingBall,
         SimonSaysAction.tightrope,
         SimonSaysAction.hoopJump,
-        SimonSaysAction.balancingBall
+        SimonSaysAction.platform
     ]
     var timer: Timer?
     
@@ -45,6 +45,22 @@ class PerformViewController: UIViewController {
         
         // call recursive method with full array
         animateForAction(currentPlaySequence)
+    }
+    
+    func randomLightSequence() {
+        let performArea = Int(arc4random(UInt32(simonSaysActionSequence.count)))
+        
+        switch performArea {
+        case 0:
+            SimonSaysAction.balancingBall = true
+        case 1:
+            SimonSaysAction.hoopJump = true
+        case 2:
+            SimonSaysAction.platform = true
+        case 3:
+            SimonSaysAction.tightrope = true
+            
+        }
     }
     
     func animateForAction(_ actions: [SimonSaysAction]) {

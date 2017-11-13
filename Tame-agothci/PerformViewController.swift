@@ -10,12 +10,16 @@ import UIKit
 
 class PerformViewController: UIViewController {
 
-    var simonSaysActionSequence = [
-        SimonSaysAction.balancingBall,
-        SimonSaysAction.balancingBall,
-        SimonSaysAction.hoopJump,
-        SimonSaysAction.platform
-    ]
+//    var simonSaysActionSequence = [
+//        SimonSaysAction.balancingBall,
+//        SimonSaysAction.balancingBall,
+//        SimonSaysAction.hoopJump,
+//        SimonSaysAction.platform
+//    ]
+    
+    var simonSaysActionSequence: [SimonSaysAction] = []
+    
+        
     var timer: Timer?
     
     @IBOutlet weak var hoopJumpButton: UIButton!
@@ -89,15 +93,23 @@ class PerformViewController: UIViewController {
         
     }
     
+    @objc func animateForTimer(timer:Timer) {
+        if let currentActions = timer.userInfo as? [SimonSaysAction] {
+            animateForAction(currentActions)
+        }
+    }
     @objc func blink(timer:Timer) {
         balancingBallButton.alpha = 1.0
         hoopJumpButton.alpha = 1.0
         platformButton.alpha = 1.0
         tightropeButton.alpha = 1.0
         
+        
+        
         if let currentActions = timer.userInfo as? [SimonSaysAction] {
             if currentActions.count > 0 {
-                animateForAction(currentActions)
+                _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(animateForTimer), userInfo: currentActions, repeats: false)
+                
             } else {
                 //do something later
             }
@@ -105,10 +117,15 @@ class PerformViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        simonSaysActionSequence.append(randomAction())
+        simonSaysActionSequence.append(randomAction())
+        simonSaysActionSequence.append(randomAction())
+        simonSaysActionSequence.append(randomAction())
+        
         playSequence()
         // Do any additional setup after loading the view.
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

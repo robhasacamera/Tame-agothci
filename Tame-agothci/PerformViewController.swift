@@ -12,7 +12,7 @@ class PerformViewController: UIViewController {
 
     var simonSaysActionSequence = [
         SimonSaysAction.balancingBall,
-        SimonSaysAction.tightrope,
+        SimonSaysAction.balancingBall,
         SimonSaysAction.hoopJump,
         SimonSaysAction.platform
     ]
@@ -47,20 +47,23 @@ class PerformViewController: UIViewController {
         animateForAction(currentPlaySequence)
     }
     
-    func randomLightSequence() {
-        let performArea = Int(arc4random(UInt32(simonSaysActionSequence.count)))
+    func randomAction() -> SimonSaysAction {
+        let performArea = Int(arc4random_uniform(UInt32(4)))
+        var action: SimonSaysAction?
         
         switch performArea {
         case 0:
-            SimonSaysAction.balancingBall = true
+            action = SimonSaysAction.balancingBall
         case 1:
-            SimonSaysAction.hoopJump = true
+            action = SimonSaysAction.hoopJump
         case 2:
-            SimonSaysAction.platform = true
+            action = SimonSaysAction.platform
         case 3:
-            SimonSaysAction.tightrope = true
+            action = SimonSaysAction.tightrope
+        default: print("Something seriously went wrong.")
             
         }
+        return action!
     }
     
     func animateForAction(_ actions: [SimonSaysAction]) {
@@ -72,33 +75,33 @@ class PerformViewController: UIViewController {
         switch currentAction {
         case .balancingBall:
             balancingBallButton.alpha = 0.5
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(blink), userInfo: nil, repeats: false)
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(blink), userInfo: currentActions, repeats: false)
         case .hoopJump:
             hoopJumpButton.alpha = 0.5
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(blink), userInfo: nil, repeats: false)
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(blink), userInfo: currentActions, repeats: false)
         case .platform:
             platformButton.alpha = 0.5
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(blink), userInfo: nil, repeats: false)
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(blink), userInfo: currentActions, repeats: false)
         case .tightrope:
             tightropeButton.alpha = 0.5
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(blink), userInfo: nil, repeats: false)
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(blink), userInfo: currentActions, repeats: false)
         }
-        
-        // call this again with remaining array
-        if currentActions.count > 0 {
-            animateForAction(currentActions)
-        } else {
-            //do something later
-        }
-        
         
     }
     
-    @objc func blink() {
+    @objc func blink(timer:Timer) {
         balancingBallButton.alpha = 1.0
         hoopJumpButton.alpha = 1.0
         platformButton.alpha = 1.0
         tightropeButton.alpha = 1.0
+        
+        if let currentActions = timer.userInfo as? [SimonSaysAction] {
+            if currentActions.count > 0 {
+                animateForAction(currentActions)
+            } else {
+                //do something later
+            }
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

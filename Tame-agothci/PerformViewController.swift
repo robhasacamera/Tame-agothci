@@ -9,18 +9,10 @@
 import UIKit
 
 class PerformViewController: UIViewController {
-
-//    var simonSaysActionSequence = [
-//        SimonSaysAction.balancingBall,
-//        SimonSaysAction.balancingBall,
-//        SimonSaysAction.hoopJump,
-//        SimonSaysAction.platform
-//    ]
     
     var simonSaysActionSequence: [SimonSaysAction] = []
-    
-        
     var timer: Timer?
+    var currentButtonPressed: SimonSaysAction?
     
     @IBOutlet weak var hoopJumpButton: UIButton!
     @IBOutlet weak var platformButton: UIButton!
@@ -32,15 +24,19 @@ class PerformViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBAction func hoopJumpButtonPressed(_ sender: Any) {
+        comparePressedActionToSequence(simonSaysActionSequence: simonSaysActionSequence, currentButtonPressed: SimonSaysAction.hoopJump)
     }
     
     @IBAction func platformButtonPressed(_ sender: Any) {
+        comparePressedActionToSequence(simonSaysActionSequence: simonSaysActionSequence, currentButtonPressed: SimonSaysAction.platform)
     }
     
     @IBAction func tightropeButtonPressed(_ sender: Any) {
+        comparePressedActionToSequence(simonSaysActionSequence: simonSaysActionSequence, currentButtonPressed: SimonSaysAction.tightrope)
     }
     
     @IBAction func balancingBallButtonPressed(_ sender: Any) {
+        comparePressedActionToSequence(simonSaysActionSequence: simonSaysActionSequence, currentButtonPressed: SimonSaysAction.balancingBall)
     }
     
     func playSequence() {
@@ -89,6 +85,18 @@ class PerformViewController: UIViewController {
         case .tightrope:
             tightropeButton.alpha = 0.5
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(blink), userInfo: currentActions, repeats: false)
+        }
+        
+    }
+    
+    func comparePressedActionToSequence(simonSaysActionSequence: [SimonSaysAction], currentButtonPressed: SimonSaysAction) {
+        var currentSequence = simonSaysActionSequence
+        let currentSequenceAction = currentSequence.removeFirst()
+        
+        if currentButtonPressed != currentSequenceAction {
+            print("You didn't do as Simon said.  You lose. :P")
+        } else {
+            print("You pressed the right button!")
         }
         
     }

@@ -41,10 +41,16 @@ class PerformViewController: UIViewController {
     
     func playSequence() {
         // copy array
+        hoopJumpButton.isEnabled = false
+        platformButton.isEnabled = false
+        tightropeButton.isEnabled = false
+        balancingBallButton.isEnabled = false
+        
         let currentPlaySequence = simonSaysActionSequence
         
         // call recursive method with full array
         animateForAction(currentPlaySequence)
+        
     }
     
     func randomAction() -> SimonSaysAction {
@@ -63,6 +69,7 @@ class PerformViewController: UIViewController {
         default: print("Something seriously went wrong.")
             
         }
+        
         return action!
     }
     
@@ -121,6 +128,7 @@ class PerformViewController: UIViewController {
             } else {
                 //do something later
             }
+            
         }
     }
     override func viewDidLoad() {
@@ -132,6 +140,7 @@ class PerformViewController: UIViewController {
         
         playSequence()
         // Do any additional setup after loading the view.
+        
     }
     
 

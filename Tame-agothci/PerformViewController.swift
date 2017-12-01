@@ -13,6 +13,7 @@ class PerformViewController: UIViewController {
     var simonSaysActionSequence: [SimonSaysAction] = []
     var timer: Timer?
     var currentButtonPressed: SimonSaysAction?
+    var playCounter = 0
     
     @IBOutlet weak var hoopJumpButton: UIButton!
     @IBOutlet weak var platformButton: UIButton!
@@ -41,10 +42,10 @@ class PerformViewController: UIViewController {
     
     func playSequence() {
         // copy array
-        hoopJumpButton.isEnabled = false
-        platformButton.isEnabled = false
-        tightropeButton.isEnabled = false
-        balancingBallButton.isEnabled = false
+        //hoopJumpButton.isEnabled = false
+        //platformButton.isEnabled = false
+        //tightropeButton.isEnabled = false
+        //balancingBallButton.isEnabled = false
         
         let currentPlaySequence = simonSaysActionSequence
         
@@ -98,12 +99,12 @@ class PerformViewController: UIViewController {
     
     func comparePressedActionToSequence(simonSaysActionSequence: [SimonSaysAction], currentButtonPressed: SimonSaysAction) {
         var currentSequence = simonSaysActionSequence
-        let currentSequenceAction = currentSequence.removeFirst()
-        
+        let currentSequenceAction = currentSequence.remove(at: playCounter)
         if currentButtonPressed != currentSequenceAction {
             print("You didn't do as Simon said.  You lose. :P")
         } else {
             print("You pressed the right button!")
+            playCounter += 1
         }
         
     }

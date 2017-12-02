@@ -1,6 +1,6 @@
 //
 //  GameViewController.swift
-//  Tame-agothci
+//  Tame-agotchi
 //
 //  Created by Robert J Cole on 10/11/17.
 //  Copyright © 2017 Robert Cole. All rights reserved.

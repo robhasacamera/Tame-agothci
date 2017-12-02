@@ -1,6 +1,6 @@
 //
 //  SimonSaysAction.swift
-//  Tame-agothci
+//  Tame-agotchi
 //
 //  Created by Ariel Burke on 11/7/17.
 //  Copyright © 2017 Robert Cole. All rights reserved.

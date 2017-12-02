@@ -22,7 +22,7 @@
 
 /* Begin PBXFileReference section */
 		B555BE881FB24C6B009463FF /* SimonSaysAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimonSaysAction.swift; sourceTree = "<group>"; };
-		E181E2F71F7AC1B90082B67A /* Tame-agothci.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tame-agothci.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E181E2F71F7AC1B90082B67A /* Tame-agotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tame-agotchi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E181E2FA1F7AC1B90082B67A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E181E2FC1F7AC1B90082B67A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E181E2FF1F7AC1B90082B67A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 		E181E2F81F7AC1B90082B67A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E181E2F71F7AC1B90082B67A /* Tame-agothci.app */,
+				E181E2F71F7AC1B90082B67A /* Tame-agotchi.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E181E2F61F7AC1B90082B67A /* Tame-agothci */ = {
+		E181E2F61F7AC1B90082B67A /* Tame-agotchi */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E181E30C1F7AC1B90082B67A /* Build configuration list for PBXNativeTarget "Tame-agothci" */;
+			buildConfigurationList = E181E30C1F7AC1B90082B67A /* Build configuration list for PBXNativeTarget "Tame-agotchi" */;
 			buildPhases = (
 				E181E2F31F7AC1B90082B67A /* Sources */,
 				E181E2F41F7AC1B90082B67A /* Frameworks */,
@@ -97,9 +97,9 @@
 			);
 			dependencies = (
 			);
-			name = "Tame-agothci";
+			name = "Tame-agotchi";
 			productName = "Tame-agothci";
-			productReference = E181E2F71F7AC1B90082B67A /* Tame-agothci.app */;
+			productReference = E181E2F71F7AC1B90082B67A /* Tame-agotchi.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -118,7 +118,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E181E2F21F7AC1B90082B67A /* Build configuration list for PBXProject "Tame-agothci" */;
+			buildConfigurationList = E181E2F21F7AC1B90082B67A /* Build configuration list for PBXProject "Tame-agotchi" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -131,7 +131,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E181E2F61F7AC1B90082B67A /* Tame-agothci */,
+				E181E2F61F7AC1B90082B67A /* Tame-agotchi */,
 			);
 		};
 /* End PBXProject section */
@@ -327,7 +327,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E181E2F21F7AC1B90082B67A /* Build configuration list for PBXProject "Tame-agothci" */ = {
+		E181E2F21F7AC1B90082B67A /* Build configuration list for PBXProject "Tame-agotchi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E181E30A1F7AC1B90082B67A /* Debug */,
@@ -336,7 +336,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E181E30C1F7AC1B90082B67A /* Build configuration list for PBXNativeTarget "Tame-agothci" */ = {
+		E181E30C1F7AC1B90082B67A /* Build configuration list for PBXNativeTarget "Tame-agotchi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E181E30D1F7AC1B90082B67A /* Debug */,

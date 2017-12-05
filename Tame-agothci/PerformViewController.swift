@@ -20,6 +20,7 @@ class PerformViewController: UIViewController {
     @IBOutlet weak var platformButton: UIButton!
     @IBOutlet weak var tightropeButton: UIButton!
     @IBOutlet weak var balancingBallButton: UIButton!
+    //@IBOutlet weak var doneButton: UIButton!
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var highScoreLabel: UILabel!
@@ -40,6 +41,9 @@ class PerformViewController: UIViewController {
     @IBAction func balancingBallButtonPressed(_ sender: Any) {
         comparePressedActionToSequence(currentButtonPressed: SimonSaysAction.balancingBall)
     }
+//    @IBAction func doneButtonPressed(_ sender: Any) {
+//        self.navigationController?.popViewController(animated: true)
+//    }
     
     func playSequence() {
         // copy array
@@ -102,8 +106,18 @@ class PerformViewController: UIViewController {
         if playCounter < 4 {
             let currentSequenceAction = simonSaysActionSequence[playCounter]
             if currentButtonPressed != currentSequenceAction {
-                descriptionLabel.text = "You didn't do as Simon said.  You lose. :P"
+                descriptionLabel.text = "You didn't do as Simon said.  You lose. You'll need to do some more training and try again."
                 // TODO: end the game
+                //clear the sequence array
+                simonSaysActionSequence.removeAll()
+                
+                //disable the buttons so they can't play
+                hoopJumpButton.isEnabled = false
+                platformButton.isEnabled = false
+                tightropeButton.isEnabled = false
+                balancingBallButton.isEnabled = false
+                //go back to the main view controller
+                //doneButton.isEnabled = true
             } else {
                 descriptionLabel.text = "You pressed the right button!"
                 performScore += 10
@@ -151,6 +165,8 @@ class PerformViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        //doneButton.isEnabled = false
+        
         simonSaysActionSequence.append(randomAction())
         simonSaysActionSequence.append(randomAction())
         simonSaysActionSequence.append(randomAction())

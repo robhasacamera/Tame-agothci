@@ -21,7 +21,7 @@ class PerformViewController: UIViewController {
     @IBOutlet weak var platformButton: UIButton!
     @IBOutlet weak var tightropeButton: UIButton!
     @IBOutlet weak var balancingBallButton: UIButton!
-    //@IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var highScoreLabel: UILabel!
@@ -42,9 +42,9 @@ class PerformViewController: UIViewController {
     @IBAction func balancingBallButtonPressed(_ sender: Any) {
         comparePressedActionToSequence(currentButtonPressed: SimonSaysAction.balancingBall)
     }
-//    @IBAction func doneButtonPressed(_ sender: Any) {
-//        self.navigationController?.popViewController(animated: true)
-//    }
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     func playSequence() {
         // copy array
@@ -118,7 +118,7 @@ class PerformViewController: UIViewController {
                 tightropeButton.isEnabled = false
                 balancingBallButton.isEnabled = false
                 //go back to the main view controller
-                //doneButton.isEnabled = true
+                doneButton.isEnabled = true
             } else {
                 descriptionLabel.text = "You pressed the right button!"
                 performScore += 10
@@ -145,13 +145,13 @@ class PerformViewController: UIViewController {
         
     }
     
-    func compareHighScoreAndScore() {
-        if highScore > performScore {
-            //performScore
-        } else {
-            highScore = performScore
-        }
-    }
+//    func compareHighScoreAndScore() {
+//        if highScore > performScore {
+//            //performScore
+//        } else {
+//            highScore = performScore
+//        }
+//    }
     
     @objc func animateForTimer(timer:Timer) {
         if let currentActions = timer.userInfo as? [SimonSaysAction] {
@@ -181,7 +181,7 @@ class PerformViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        //doneButton.isEnabled = false
+        doneButton.isEnabled = false
         
         simonSaysActionSequence.append(randomAction())
         simonSaysActionSequence.append(randomAction())

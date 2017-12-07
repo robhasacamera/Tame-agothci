@@ -295,7 +295,7 @@
             </objects>
             <point key="canvasLocation" x="1407.2" y="102.70935960591133"/>
         </scene>
-        <!--Perform View Controller-->
+        <!--Perform Simon Says-->
         <scene sceneID="tBn-eG-Udl">
             <objects>
                 <viewController id="vX4-ye-MuS" customClass="PerformViewController" customModule="Tame_agotchi" customModuleProvider="target" sceneMemberID="viewController">
@@ -383,9 +383,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cOb-AB-KyX"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Perform Simon Says" id="7i0-UV-Pg6">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="5Pf-sx-zB7">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="vX4-ye-MuS" id="GQU-fF-NG6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="balancingBallButton" destination="2xM-zQ-pAL" id="m4S-xK-sgT"/>
                         <outlet property="descriptionLabel" destination="yna-e9-8cZ" id="JHH-Ke-4gv"/>
+                        <outlet property="doneButton" destination="5Pf-sx-zB7" id="h0J-PJ-0QR"/>
                         <outlet property="highScoreLabel" destination="1O7-Nv-Zo7" id="0jn-R9-WmF"/>
                         <outlet property="hoopJumpButton" destination="jcL-Gc-9Kb" id="Pvn-rB-dKC"/>
                         <outlet property="platformButton" destination="idF-jA-vIp" id="FNV-KK-qGs"/>

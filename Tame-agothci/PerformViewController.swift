@@ -16,6 +16,15 @@ class PerformViewController: UIViewController {
     var playCounter = 0
     var performScore = 0
     var highScore: Int = 0
+    let defaults = UserDefaults.standard
+    
+    func saveHighScore() {
+        defaults.set(highScore, forKey: "savedHighScore")
+    }
+    
+    func getHighScore() {
+        highScore = defaults.integer(forKey: "savedHighScore")
+    }
     
     @IBOutlet weak var hoopJumpButton: UIButton!
     @IBOutlet weak var platformButton: UIButton!
@@ -108,6 +117,7 @@ class PerformViewController: UIViewController {
             let currentSequenceAction = simonSaysActionSequence[playCounter]
             if currentButtonPressed != currentSequenceAction {
                 descriptionLabel.text = "You didn't do as Simon said.  You lose. You'll need to do some more training and try again."
+                saveHighScore()
                 // TODO: end the game
                 //clear the sequence array
                 simonSaysActionSequence.removeAll()
@@ -178,7 +188,8 @@ class PerformViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         doneButton.isEnabled = false
-        
+        getHighScore()
+        highScoreLabel.text = "High Score: \(highScore)"
         simonSaysActionSequence.append(randomAction())
         simonSaysActionSequence.append(randomAction())
         simonSaysActionSequence.append(randomAction())

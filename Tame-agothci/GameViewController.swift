@@ -32,10 +32,22 @@ class GameViewController: UIViewController {
     var hoop3 = 0
     var hoop4 = 0
     
-    @IBOutlet weak var roundLevelLabel: UILabel!
-    @IBOutlet weak var playerScoreLabel: UILabel!
+    @IBOutlet weak var roundLevelLabel: UILabel! {
+        didSet {
+            roundLevelLabel.text = "Round \(currentRound)"
+        }
+    }
+    @IBOutlet weak var playerScoreLabel: UILabel! {
+        didSet {
+            playerScoreLabel.text = "Score: \(playerScore)"
+        }
+    }
     @IBOutlet weak var opponentNameLabel: UILabel!
-    @IBOutlet weak var opponentScoreLabel: UILabel!
+    @IBOutlet weak var opponentScoreLabel: UILabel! {
+        didSet {
+            opponentScoreLabel.text = "Score: \(opponentScore)"
+        }
+    }
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var opponentImageView: UIImageView!
     

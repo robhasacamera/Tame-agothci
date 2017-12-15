@@ -46,6 +46,24 @@ class MainViewController: UIViewController {
     @IBOutlet weak var performButton: UIButton!
     @IBOutlet weak var lionImage: UIImageView!
     
+    let defaults = UserDefaults.standard
+    
+    func saveLionHappiness() {
+        defaults.set(lion.happiness, forKey: "savedLionHappiness")
+    }
+    
+    func getLionHappiness() {
+        lion.happiness = defaults.integer(forKey: "savedLionHappiness")
+    }  
+    
+    func saveLionHunger() {
+        defaults.set(lion.hunger, forKey: "savedLionHunger")
+    }
+    
+    func getLionHunger() {
+        lion.hunger = defaults.integer(forKey: "savedLionHunger")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -284,7 +302,7 @@ class MainViewController: UIViewController {
         reoccuringHungerInterval = 15.0 * cheatPercentage
         initialHappinessInterval = 90.0 * cheatPercentage
         recurringHappinessInterval = 15.0 * cheatPercentage
-        lion.level = 4
+     //   lion.level = 4
     }
 }
 

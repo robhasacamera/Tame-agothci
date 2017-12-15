@@ -12,9 +12,21 @@ class GameViewController: UIViewController {
     var lion: Lion?
     var opponents = [Opponent]()
     var selectedOpponent: Opponent?
-    var playerScore = 0
-    var opponentScore = 0
-    var currentRound = 1
+    var playerScore = 0 {
+        didSet {
+           playerScoreLabel.text = "Score: \(playerScore)"
+        }
+    }
+    var opponentScore = 0 {
+        didSet {
+            opponentScoreLabel.text = "Score: \(opponentScore)"
+        }
+    }
+    var currentRound = 1 {
+        didSet {
+            roundLevelLabel.text = "Round \(currentRound)"
+        }
+    }
     var hoop1 = 0
     var hoop2 = 0
     var hoop3 = 0
@@ -48,9 +60,6 @@ class GameViewController: UIViewController {
             let opponentName = selectedOpponent.trainerName
             let opponentLionName = selectedOpponent.lionName
             opponentNameLabel.text = "\(opponentLionName) trained by \(opponentName)"
-            opponentScoreLabel.text = "Score: \(opponentScore)"
-            playerScoreLabel.text = "Score: \(playerScore)"
-            roundLevelLabel.text = "Round \(currentRound)"
             opponentImageView.image = UIImage(named: selectedOpponent.imageName)
         }
         doneButton.isEnabled = false

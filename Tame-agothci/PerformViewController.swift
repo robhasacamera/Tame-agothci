@@ -14,8 +14,16 @@ class PerformViewController: UIViewController {
     var timer: Timer?
     var currentButtonPressed: SimonSaysAction?
     var playCounter = 0
-    var performScore = 0
-    var highScore: Int = 0
+    var performScore = 0 {
+        didSet {
+            scoreLabel.text = "Score: \(performScore)"
+        }
+    }
+    var highScore: Int = 0 {
+        didSet {
+            highScoreLabel.text = "High Score: \(highScore)"
+        }
+    }
     let defaults = UserDefaults.standard
     
     func saveHighScore() {
@@ -132,12 +140,10 @@ class PerformViewController: UIViewController {
             } else {
                 descriptionLabel.text = "You pressed the right button!"
                 performScore += 10
-                scoreLabel.text = "Score: \(performScore)"
                 playCounter += 1
                 if playCounter == simonSaysActionSequence.count {
                     descriptionLabel.text = "DUDE! You won! Now go eat a gazelle!"
                     performScore += 100
-                    scoreLabel.text = "Score: \(performScore)"
                     playCounter = 0
                     simonSaysActionSequence.append(randomAction())
                     playSequence()
@@ -155,7 +161,6 @@ class PerformViewController: UIViewController {
     func compareHighScoreAndScore() {
         if highScore < performScore {
             highScore = performScore
-            highScoreLabel.text = "High Score: \(highScore)"
         }
     }
     

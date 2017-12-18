@@ -53,22 +53,29 @@ class MainViewController: UIViewController {
     }
     
     func getLionHappiness() {
-        lion.happiness = defaults.integer(forKey: "savedLionHappiness")
-    }  
+        if let lionHappiness = defaults.object(forKey: "savedLionHappiness") as? Int {
+            lion.happiness = lionHappiness
+        }
+    }
     
     func saveLionHunger() {
         defaults.set(lion.hunger, forKey: "savedLionHunger")
     }
     
     func getLionHunger() {
-        lion.hunger = defaults.integer(forKey: "savedLionHunger")
+        if let lionHunger = defaults.object(forKey: "savedLionHunger") as? Int {
+            lion.hunger = lionHunger
+        }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateProgressViews()
+        getLionHunger()
+        getLionHappiness()
         setupForDebug()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -113,6 +120,7 @@ class MainViewController: UIViewController {
     @IBAction func feedButtonPressed(_ sender: Any) {
         feedButton.isEnabled = false
         lion.hunger -= 10
+        saveLionHunger()
         lastTimeFed = Date()
         lastTimeHungry = nil
         lionImage.image = #imageLiteral(resourceName: "Lion-feed")
@@ -122,6 +130,7 @@ class MainViewController: UIViewController {
     @IBAction func petButtonPressed(_ sender: Any) {
         petButton.isEnabled = false
         lion.happiness += 5
+        saveLionHappiness()
         lastTimePet = Date()
         lastTimeUnhappy = nil
         lionImage.image = #imageLiteral(resourceName: "Lion-pet")
@@ -132,6 +141,7 @@ class MainViewController: UIViewController {
         print("Comb was pressed")
         combButton.isEnabled = false
         lion.happiness += 10
+        saveLionHappiness()
         lastTimeCombed = Date()
         lastTimeUnhappy = nil
         lionImage.image = #imageLiteral(resourceName: "Lion-comb")
@@ -142,6 +152,7 @@ class MainViewController: UIViewController {
         print("Play was pressed")
         playButton.isEnabled = false
         lion.happiness += 15
+        saveLionHappiness()
         lastTimePlayed = Date()
         lastTimeUnhappy = nil
         lionImage.image = #imageLiteral(resourceName: "Lion-play")
@@ -159,6 +170,7 @@ class MainViewController: UIViewController {
             let timeSinceLastTimeHungry = -1 * lastTimeHungry.timeIntervalSinceNow
             if timeSinceLastTimeHungry >= reoccuringHungerInterval {
                 lion.hunger += 5
+                saveLionHunger()
                 self.lastTimeHungry = Date()
                 print("\(self.lastTimeHungry!): Updated hunger to \(lion.hunger)")
             }
@@ -167,6 +179,7 @@ class MainViewController: UIViewController {
                 let timeSinceLastFed = -1 * lastTimeFed.timeIntervalSinceNow
                 if timeSinceLastFed >= initialHungerInterval {
                     lion.hunger += 5
+                    saveLionHunger()
                     lastTimeHungry = Date()
                     print("\(lastTimeHungry!): Updated hunger to \(lion.hunger)")
                 }
@@ -174,6 +187,7 @@ class MainViewController: UIViewController {
                 let timeSinceAppLaunch = -1 * appLaunchTime.timeIntervalSinceNow
                 if timeSinceAppLaunch >= initialHungerInterval {
                     lion.hunger += 5
+                    saveLionHunger()
                     lastTimeHungry = Date()
                     print("\(lastTimeHungry!): Updated hunger to \(lion.hunger)")
                 }
@@ -187,6 +201,7 @@ class MainViewController: UIViewController {
             let timeSinceLastTimeUnhappy = -1 * lastTimeUnhappy.timeIntervalSinceNow
             if timeSinceLastTimeUnhappy >= recurringHappinessInterval {
                 lion.happiness -= 10
+                saveLionHappiness()
                 self.lastTimeUnhappy = Date()
                 print("\(self.lastTimeUnhappy!): Updated happiness to \(lion.happiness)")
             }
@@ -195,6 +210,7 @@ class MainViewController: UIViewController {
                 let timeSinceLastPet = -1 * lastTimePet.timeIntervalSinceNow
                 if timeSinceLastPet >= initialHappinessInterval {
                     lion.happiness -= 10
+                    saveLionHappiness()
                     lastTimeUnhappy = Date()
                     print("\(self.lastTimeUnhappy!): Updated happiness to \(lion.happiness)")
                 }
@@ -202,6 +218,7 @@ class MainViewController: UIViewController {
                 let timeSinceLastCombed = -1 * lastTimeCombed.timeIntervalSinceNow
                 if timeSinceLastCombed >= initialHappinessInterval {
                     lion.happiness -= 10
+                    saveLionHappiness()
                     lastTimeUnhappy = Date()
                     print("\(self.lastTimeUnhappy!): Updated happiness to \(lion.happiness)")
                 }
@@ -210,6 +227,7 @@ class MainViewController: UIViewController {
                 let timeSinceLastPlayed = -1 * lastTimePlayed.timeIntervalSinceNow
                 if timeSinceLastPlayed >= initialHappinessInterval {
                     lion.happiness -= 10
+                    saveLionHappiness()
                     lastTimeUnhappy = Date()
                     print("\(self.lastTimeUnhappy!): Updated happiness to \(lion.happiness)")
                 }
@@ -218,6 +236,7 @@ class MainViewController: UIViewController {
                 let timeSinceAppLaunch = -1 * appLaunchTime.timeIntervalSinceNow
                 if timeSinceAppLaunch >= initialHappinessInterval {
                     lion.happiness -= 10
+                    saveLionHappiness()
                     lastTimeUnhappy = Date()
                     print("\(self.lastTimeUnhappy!): Updated happiness to \(lion.happiness)")
                 }

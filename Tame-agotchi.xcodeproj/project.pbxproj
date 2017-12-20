@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		371E431A1FEAEB93000C12BF /* LionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E43191FEAEB93000C12BF /* LionDataSource.swift */; };
 		B555BE891FB24C6B009463FF /* SimonSaysAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B555BE881FB24C6B009463FF /* SimonSaysAction.swift */; };
 		E181E2FB1F7AC1B90082B67A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E181E2FA1F7AC1B90082B67A /* AppDelegate.swift */; };
 		E181E2FD1F7AC1B90082B67A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E181E2FC1F7AC1B90082B67A /* MainViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		371E43191FEAEB93000C12BF /* LionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LionDataSource.swift; sourceTree = "<group>"; };
 		B555BE881FB24C6B009463FF /* SimonSaysAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimonSaysAction.swift; sourceTree = "<group>"; };
 		E181E2F71F7AC1B90082B67A /* Tame-agotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tame-agotchi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E181E2FA1F7AC1B90082B67A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				E181E3091F7AC1B90082B67A /* Info.plist */,
 				E181E3011F7AC1B90082B67A /* Tame_agothci.xcdatamodeld */,
 				E181E30F1F7ACAB00082B67A /* Lion.swift */,
+				371E43191FEAEB93000C12BF /* LionDataSource.swift */,
 				B555BE881FB24C6B009463FF /* SimonSaysAction.swift */,
 			);
 			path = "Tame-agothci";
@@ -157,6 +160,7 @@
 				E181E3181FA8D2910082B67A /* PerformViewController.swift in Sources */,
 				E181E3141F8E96200082B67A /* GameViewController.swift in Sources */,
 				E181E3031F7AC1B90082B67A /* Tame_agothci.xcdatamodeld in Sources */,
+				371E431A1FEAEB93000C12BF /* LionDataSource.swift in Sources */,
 				E181E3161F8E9E090082B67A /* Opponent.swift in Sources */,
 				B555BE891FB24C6B009463FF /* SimonSaysAction.swift in Sources */,
 				E181E2FD1F7AC1B90082B67A /* MainViewController.swift in Sources */,

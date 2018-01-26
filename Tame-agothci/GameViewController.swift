@@ -57,6 +57,18 @@ class GameViewController: UIViewController {
     @IBOutlet weak var hoop4Button: UIButton!
     @IBOutlet weak var doneButton: UIBarButtonItem!
     
+    let defaults = UserDefaults.standard
+    
+    func saveLionLevel() {
+        defaults.set(lion?.level, forKey: "savedLionLevel")
+    }
+    
+    func getLionLevel() {
+        if let lionLevel = defaults.object(forKey: "savedLionLevel") as? Int {
+            lion?.level = lionLevel
+        }
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +78,7 @@ class GameViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         if let lion = lion {
+            getLionLevel()
             selectedOpponent = opponents[(lion.level-1)]
         }
         if let selectedOpponent = selectedOpponent {
@@ -219,12 +232,15 @@ class GameViewController: UIViewController {
                 messageLabel.text = "Sorry. You lost."
                 lion?.happiness = 0
             }
+            saveLionLevel()
             hoop1Button.isEnabled = false
             hoop2Button.isEnabled = false
             hoop3Button.isEnabled = false
             hoop4Button.isEnabled = false
         }
     }
+    
+    
     /*
     // MARK: - Navigation
 

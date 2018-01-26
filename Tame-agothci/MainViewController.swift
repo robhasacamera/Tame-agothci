@@ -71,9 +71,9 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateProgressViews()
         getLionHunger()
         getLionHappiness()
+        updateProgressViews()
         setupForDebug()
         
     }

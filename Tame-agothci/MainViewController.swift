@@ -297,7 +297,7 @@ class MainViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let gameController = segue.destination as? GameViewController {
+        if let gameController = segue.destination as? TrainingViewController {
             gameController.lion = lion
         }
         timer?.invalidate()

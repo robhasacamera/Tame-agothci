@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class TrainingViewController: UIViewController {
     var lion: Lion?
     var opponents = [Opponent]()
     var selectedOpponent: Opponent?

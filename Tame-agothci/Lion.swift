@@ -9,6 +9,10 @@
 import Foundation
 
 public class Lion {
+    static let lionDidUpdateNotification = Notification.Name("lionDidUpdateNotification")
+    
+    let notificationCenter = NotificationCenter.default
+    
     var hunger: Int {
         didSet {
             if hunger > 100 {
@@ -16,6 +20,8 @@ public class Lion {
             } else if hunger < 0 {
                 hunger = 0
             }
+            
+            notificationCenter.post(name: Lion.lionDidUpdateNotification, object: self)
         }
     }
     var happiness: Int {
@@ -25,9 +31,15 @@ public class Lion {
             } else if happiness > 100 {
                 happiness = 100
             }
+            notificationCenter.post(name: Lion.lionDidUpdateNotification, object: self)
         }
     }
-    var level: Int
+    var level: Int {
+        didSet {
+            notificationCenter.post(name: Lion.lionDidUpdateNotification, object: self)
+        }
+    }
+    
     public init (hunger: Int, happiness: Int){
         level = 1
         self.hunger = hunger

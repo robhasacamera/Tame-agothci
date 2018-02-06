@@ -32,6 +32,8 @@ class MainViewController: UIViewController {
     var initialHappinessInterval = 90.0
     var recurringHappinessInterval = 15.0
     
+    
+    
     //Views, Labels, and Buttons
     @IBOutlet weak var hungerProgressView: UIProgressView!
     @IBOutlet weak var happinessProgressView: UIProgressView!

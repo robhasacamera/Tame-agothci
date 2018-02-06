@@ -72,9 +72,9 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        subscribeToNotification()
         getLionHunger()
         getLionHappiness()
-        updateProgressViews()
         setupForDebug()
         subscribeToNotification()
     }
@@ -85,6 +85,15 @@ class MainViewController: UIViewController {
     
     @objc func lionDidUpdate() {
         print("lion hunger = \(lion.hunger), happiness = \(lion.happiness)")
+    }
+    
+    func subscribeToNotification() {
+        notificationCenter.addObserver(self, selector: #selector(lionDidUpdate), name: Lion.lionDidUpdateNotification, object: nil)
+    }
+    
+    @objc func lionDidUpdate() {
+     print("lion hunger = \(lion.hunger), happpiness = \(lion.happiness)")
+        updateProgressViews()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -120,7 +129,6 @@ class MainViewController: UIViewController {
         updateCombButton()
         updatePlayButton()
         updateTrainButton()
-        updateProgressViews()
         
         lastUpdateTime = Date()
     }

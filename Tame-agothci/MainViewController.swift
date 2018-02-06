@@ -84,14 +84,6 @@ class MainViewController: UIViewController {
     }
     
     @objc func lionDidUpdate() {
-        print("lion hunger = \(lion.hunger), happiness = \(lion.happiness)")
-    }
-    
-    func subscribeToNotification() {
-        notificationCenter.addObserver(self, selector: #selector(lionDidUpdate), name: Lion.lionDidUpdateNotification, object: nil)
-    }
-    
-    @objc func lionDidUpdate() {
      print("lion hunger = \(lion.hunger), happpiness = \(lion.happiness)")
         updateProgressViews()
     }

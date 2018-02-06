@@ -31,8 +31,7 @@ class MainViewController: UIViewController {
     var reoccuringHungerInterval = 15.0
     var initialHappinessInterval = 90.0
     var recurringHappinessInterval = 15.0
-    
-    
+    let notificationCenter = NotificationCenter.default
     
     //Views, Labels, and Buttons
     @IBOutlet weak var hungerProgressView: UIProgressView!
@@ -77,7 +76,15 @@ class MainViewController: UIViewController {
         getLionHappiness()
         updateProgressViews()
         setupForDebug()
-        
+        subscribeToNotification()
+    }
+    
+    func subscribeToNotification() {
+        notificationCenter.addObserver(self, selector: #selector(lionDidUpdate), name: Lion.lionDidUpdateNotification, object: nil)
+    }
+    
+    @objc func lionDidUpdate() {
+        print("lion hunger = \(lion.hunger), happiness = \(lion.happiness)")
     }
     
     override func viewDidAppear(_ animated: Bool) {

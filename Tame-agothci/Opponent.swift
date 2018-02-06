@@ -14,7 +14,7 @@ struct Opponent {
     var lionName: String
     var imageName: String
     
-    public func hoopGuess() -> Bool {
+    public func didGuessHoop() -> Bool {
         let precision = 1000
         
         let randomNumber = Int(arc4random_uniform(UInt32(precision)) + 1) // 1, 2, 3...1000

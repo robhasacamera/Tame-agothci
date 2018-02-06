@@ -97,18 +97,43 @@ class TrainingViewController: UIViewController {
     }
     
     //Button Actions
-    @IBAction func hoop1Pressed(_ sender: Any) {
-        if hoop1 == 1 {
-            messageLabel.text = "You guessed correctly!"
-            playerScore += 1
-            playerScoreLabel.text = "Score: \(playerScore)"
+    fileprivate func resetHoops() {
+        hoop1 = 0
+        hoop2 = 0
+        hoop3 = 0
+        hoop4 = 0
+    }
+    
+    private func correctHoop(_ hoop: Int) -> Bool {
+        return hoop == 1
+    }
+    
+    private func updateForCorrectGuess() {
+        messageLabel.text = "You guessed correctly!"
+        playerScore += 1
+        playerScoreLabel.text = "Score: \(playerScore)"
+    }
+    
+    private func updateForIncorrectGuess() {
+        messageLabel.text = "Wrong hoop.  Better luck next round."
+    }
+    
+    private func updateForCorrectOpponentGuess() {
+        opponentScore += 1
+        opponentScoreLabel.text = "Score: \(opponentScore)"
+    }
+    
+    private func hoopPressed(hoop: Int) {
+        if correctHoop(hoop) {
+            updateForCorrectGuess()
         } else {
-            messageLabel.text = "Wrong hoop.  Better luck next round."
+            updateForIncorrectGuess()
         }
-        if let opponent = selectedOpponent, opponent.hoopGuess() {
-            opponentScore += 1
-            opponentScoreLabel.text = "Score: \(opponentScore)"
+        
+        if let opponent = selectedOpponent, opponent.didGuessHoop() {
+            updateForCorrectOpponentGuess()
         }
+        
         gameWinner()
         
         if currentRound == 5 {
@@ -117,83 +142,25 @@ class TrainingViewController: UIViewController {
         if currentRound < 5 {
             currentRound += 1
             roundLevelLabel.text = "Round \(currentRound)"
-            hoop1 = 0
+            resetHoops()
             setupRound()
         }
+    }
+    
+    @IBAction func hoop1Pressed(_ sender: Any) {
+        hoopPressed(hoop:hoop1)
     }
     
     @IBAction func hoop2Pressed(_ sender: Any) {
-        if hoop2 == 1 {
-            messageLabel.text = "You guessed correctly!"
-            playerScore += 1
-            playerScoreLabel.text = "Score: \(playerScore)"
-        } else {
-            messageLabel.text = "Wrong hoop.  Better luck next round."
-        }
-        if let opponent = selectedOpponent, opponent.hoopGuess() {
-            opponentScore += 1
-            opponentScoreLabel.text = "Score: \(opponentScore)"
-        }
-        gameWinner()
-        
-        if currentRound == 5 {
-            doneButton.isEnabled = true
-        }
-        if currentRound < 5 {
-            currentRound += 1
-            roundLevelLabel.text = "Round \(currentRound)"
-            hoop2 = 0
-            setupRound()
-        }
+        hoopPressed(hoop: hoop2)
     }
    
     @IBAction func hoop3Pressed(_ sender: Any) {
-        if hoop3 == 1 {
-            messageLabel.text = "You guessed correctly!"
-            playerScore += 1
-            playerScoreLabel.text = "Score: \(playerScore)"
-        } else {
-            messageLabel.text = "Wrong hoop.  Better luck next round."
-        }
-        if let opponent = selectedOpponent, opponent.hoopGuess() {
-            opponentScore += 1
-            opponentScoreLabel.text = "Score: \(opponentScore)"
-        }
-        gameWinner()
-       
-        if currentRound == 5 {
-            doneButton.isEnabled = true
-        }
-        if currentRound < 5 {
-            currentRound += 1
-            roundLevelLabel.text = "Round \(currentRound)"
-            hoop3 = 0
-            setupRound()
-        }
+        hoopPressed(hoop: hoop3)
     }
     
     @IBAction func hoop4Pressed(_ sender: Any) {
-        if hoop4 == 1 {
-            messageLabel.text = "You guessed correctly!"
-            playerScore += 1
-            playerScoreLabel.text = "Score: \(playerScore)"
-        } else {
-            messageLabel.text = "Wrong hoop.  Better luck next round."            
-        }
-        if let opponent = selectedOpponent, opponent.hoopGuess() {
-            opponentScore += 1
-            opponentScoreLabel.text = "Score: \(opponentScore)"
-        }
-        gameWinner()
-        if currentRound == 5 {
-            doneButton.isEnabled = true
-        }
-        if currentRound < 5 {
-            currentRound += 1
-            roundLevelLabel.text = "Round \(currentRound)"
-            hoop4 = 0
-            setupRound()
-        }
+        hoopPressed(hoop: hoop4)
     }    
     
     @IBAction func doneButtonPressed(_ sender: Any) {
@@ -221,16 +188,32 @@ class TrainingViewController: UIViewController {
         }        
     }
     
+    fileprivate func isGameOver() -> Bool {
+        return currentRound == 5
+    }
+    
+    fileprivate func playerWon() -> Bool {
+        return playerScore > opponentScore
+    }
+    
+    private func updateForPlayerWinning() {
+        messageLabel.text = "Congratulations! You won!"
+        lion?.level += 1
+        lion?.hunger = 30
+        lion?.happiness = 10
+    }
+    
+    private func updateForPlayerLosing() {
+        messageLabel.text = "Sorry. You lost."
+        lion?.happiness = 0
+    }
+    
     func gameWinner() {
-        if currentRound == 5 {
-            if playerScore > opponentScore {
-              messageLabel.text = "Congratulations! You won!"
-              lion?.level += 1
-              lion?.hunger = 30
-              lion?.happiness = 10
+        if isGameOver() {
+            if playerWon() {
+                updateForPlayerWinning()
             } else {
-                messageLabel.text = "Sorry. You lost."
-                lion?.happiness = 0
+                updateForPlayerLosing()
             }
             saveLionLevel()
             hoop1Button.isEnabled = false

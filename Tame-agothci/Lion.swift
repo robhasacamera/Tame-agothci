@@ -24,6 +24,7 @@ public class Lion {
             notificationCenter.post(name: Lion.lionDidUpdateNotification, object: self)
         }
     }
+    
     var happiness: Int {
         didSet {
             if happiness < 0 {
@@ -34,6 +35,7 @@ public class Lion {
             notificationCenter.post(name: Lion.lionDidUpdateNotification, object: self)
         }
     }
+    
     var level: Int {
         didSet {
             notificationCenter.post(name: Lion.lionDidUpdateNotification, object: self)
